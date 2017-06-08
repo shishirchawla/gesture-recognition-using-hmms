@@ -1,0 +1,22 @@
+# Quantize
+HQuant -T 1 -C HQuant.conf -s 1 -n 1 128 -S trainlist.txt linvq
+HCopy -A  -D  -C HCopy.conf  -S targetlist.txt
+
+# Init
+HInit -A -D -w 1.0 -T 1 -S trainlist_ascending.txt -M model/hmm0 model/proto/Ascending
+HInit -A -D -w 1.0 -T 1 -S trainlist_descending.txt -M model/hmm0 model/proto/Descending
+
+# Training
+HRest -A -D -T 1 -S trainlist_ascending.txt -M model/hmm1 -H model/hmm0/Ascending Ascending
+HRest -A -D -T 1 -S trainlist_descending.txt -M model/hmm1 -H model/hmm0/Descending Descending
+HRest -A -D -T 1 -S trainlist_ascending.txt -M model/hmm2 -H model/hmm1/Ascending Ascending
+HRest -A -D -T 1 -S trainlist_descending.txt -M model/hmm2 -H model/hmm1/Descending Descending
+HRest -A -D -T 1 -S trainlist_ascending.txt -M model/hmm3 -H model/hmm2/Ascending Ascending
+HRest -A -D -T 1 -S trainlist_descending.txt -M model/hmm3 -H model/hmm2/Descending Descending
+
+# Parse grammar
+HParse -A -D -T 1 def/gram.txt net.slf
+HSGen -A -D -n 2 -s net.slf def/dict.txt
+
+# Classify
+HVite -A -D -T 1 -w net.slf -H model/hmm3/all -i reco.mlf def/dict.txt hmmlist.txt data/mfcc/subject108.dat_13_II.bin

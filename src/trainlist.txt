@@ -1,0 +1,16 @@
+./data/mfcc/subject101.dat_12.bin
+./data/mfcc/subject101.dat_13.bin
+./data/mfcc/subject102.dat_12.bin
+./data/mfcc/subject102.dat_13.bin
+./data/mfcc/subject103.dat_12.bin
+./data/mfcc/subject103.dat_13.bin
+./data/mfcc/subject104.dat_12.bin
+./data/mfcc/subject104.dat_13.bin
+./data/mfcc/subject105.dat_12.bin
+./data/mfcc/subject105.dat_13.bin
+./data/mfcc/subject106.dat_12.bin
+./data/mfcc/subject106.dat_13.bin
+./data/mfcc/subject107.dat_12.bin
+./data/mfcc/subject107.dat_13.bin
+./data/mfcc/subject108.dat_12.bin
+./data/mfcc/subject108.dat_13.bin

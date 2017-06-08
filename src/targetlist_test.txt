@@ -1,0 +1,2 @@
+./data/mfcc/subject109.dat_12.bin ./data/mfcc/subject109.dat_12_II.bin
+./data/mfcc/subject109.dat_13.bin ./data/mfcc/subject109.dat_13_II.bin

@@ -1,0 +1,2 @@
+$WORD = ASCENDING | DESCENDING;
+( [ $WORD ] )
