@@ -1,5 +1,5 @@
 # Quantize
-HQuant -T 1 -C HQuant.conf -s 1 -n 1 128 -S trainlist.txt linvq
+HQuant -T 1 -C HQuant.conf -s 1 -n 1 256 -S trainlist.txt linvq
 HCopy -A  -D  -C HCopy.conf  -S targetlist.txt
 
 # Init

@@ -1,2 +1,7 @@
-ASCENDING   [Ascending]   Ascending
-DESCENDING  [Descending]  Descending
+ACTIVITY1   [Activity1]   Activity1
+ACTIVITY2   [Activity2]   Activity2
+ACTIVITY3   [Activity3]   Activity3
+ACTIVITY4   [Activity4]   Activity4
+ACTIVITY5   [Activity5]   Activity5
+ACTIVITY6   [Activity6]   Activity6
+ACTIVITYOTHER   [ActivityOther]   ActivityOther
