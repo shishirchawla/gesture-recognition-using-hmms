@@ -1,6 +1,7 @@
 # Pre processing utility functions
 import os
 from config import config
+from collections import defaultdict
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -12,15 +13,7 @@ from features import *
 log_config = config['logging']
 logger = logging.getLogger(__name__)
 def process_train_data(train_dir, train_files):
-  # FIXME do better file handling
-  open('trainlist.txt', 'w').close()
-  open('trainlist_act_Other.txt', 'w').close()
-  open('targetlist.txt', 'w').close()
-  open('testlist.txt', 'w').close()
-  open('testtargetlist.txt', 'w').close()
-  open('classifylist.txt', 'w').close()
-  for i in range(1, 25):
-    open('trainlist'+'_act_'+str(i)+'.txt', 'w').close()
+  user_segment_dict = defaultdict(list)
 
   for train_file in train_files:
     file_path = os.path.join(train_dir, train_file)
@@ -71,39 +64,53 @@ def process_train_data(train_dir, train_files):
         segment_features = compute_features(segment, 15)
         if segment_features.shape[0] != 0:
           writeFeaturesToHTK(segment_features, htk_output_file_name)
+          user_segment_dict[(train_file, activity_type)].append(htk_output_file_name)
 
-          # FIXME do better file handling
-          newline = "\n"
-          if train_file in config['test_files']:
-            with open("testlist.txt", "a") as myfile:
-              myfile.write(htk_output_file_name + newline)
-            with open("testtargetlist.txt", "a") as myfile:
-              myfile.write(htk_output_file_name + " " + htk_output_file_name + "_II" + newline)
-            with open("classifylist.txt", "a") as myfile:
-              # FIXME Remove the following line, this was used when the
-              # discrete probability model was used and the data was quantized
-              #myfile.write(htk_output_file_name + "_II" + newline)
-              myfile.write(htk_output_file_name + newline)
-          else :
-            with open("trainlist.txt", "a") as myfile:
-              myfile.write(htk_output_file_name + newline)
-            with open("targetlist.txt", "a") as myfile:
-              myfile.write(htk_output_file_name + " " + htk_output_file_name + "_II" + newline)
-            with open("trainlist"+"_act_"+str(activity_type)+".txt", "a") as myfile:
-              # FIXME Remove the following line, this was used when the
-              # discrete probability model was used and the data was quantized
-              #myfile.write(htk_output_file_name + "_II" + newline)
-              myfile.write(htk_output_file_name + newline)
-            if (activity_type > 6):
-              with open("trainlist_act_Other.txt", "a") as myfile:
-                myfile.write(htk_output_file_name + newline)
+  writeLeaveOneOutFiles(user_segment_dict)
 
-        # FIXME Remove the following lines
-        # write in HTK format
-        # writeDfToHTK(segment, htk_output_file_name)
+def writeLeaveOneOutFiles(user_segment_dict):
+  newline = "\n" # :)
 
-      # FIXME currently testing windows for only one activity
-      #break
+  users = set()
+  for user in user_segment_dict:
+    users.add(user[0])
+
+  for user in users:
+    path = './' + user + '-data'
+    open(os.path.join(path, "testlist.txt"), 'w').close()
+    open(os.path.join(path, "classifylist.txt"), 'w').close()
+    open(os.path.join(path, "trainlist.txt"), 'w').close()
+    open(os.path.join(path, "trainlist_act_Other.txt"), 'w').close()
+    # FIXME Replace 25 with a meaningful name
+    for i in range(1, 25):
+      open(os.path.join(path, "trainlist"+"_act_"+str(i)+".txt"), 'w').close()
+
+  for test_user, test_segments in user_segment_dict.iteritems():
+    path = './' + test_user[0] + '-data'
+
+    if not os.path.exists(path):
+      os.makedirs(path)
+
+    # test files
+    with open(os.path.join(path, "testlist.txt"), 'a') as test_file, open(os.path.join(path, "classifylist.txt"), 'a') as classify_file:
+      for segment in test_segments:
+        test_file.write(segment + newline)
+        classify_file.write(segment + newline)
+
+    # train files
+    with open(os.path.join(path, "trainlist.txt"), 'a') as train_file:
+      for train_user, train_segments in user_segment_dict.iteritems():
+        # the key is a tuple where [0] is the train file and [1] is the
+        # activity type
+        if train_user[0] != test_user[0]:
+          activity_type = train_user[1]
+          with open(os.path.join(path, "trainlist"+"_act_"+str(activity_type)+".txt"), 'a') as train_activity_file:
+            for segment in train_segments:
+              train_file.write(segment + newline)
+              train_activity_file.write(segment + newline)
+              if (activity_type > 6):
+                with open(os.path.join(path, "trainlist_act_Other.txt"), 'a') as train_other_file:
+                  train_other_file.write(segment + newline)
 
 def loadPamap(filepath):
   column_names = ['timestamp', 'activity', 'x-axis', 'y-axis', 'z-axis']

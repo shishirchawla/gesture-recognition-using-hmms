@@ -3,3 +3,7 @@ data/csvoutput/
 *.pyc
 data/*
 *.swp
+subject*dat*/
+*.log
+model/hmm*
+reco.mlf
