@@ -10,20 +10,24 @@ config = {
   'test_files'    : ['subject105.dat'],
   'output_dir'    : './data/',
 
-
-  'normalize'     : 0,
-
+  # number of features
+  'num_features'  : 15,
 
   # Testing config
-  'leave_one_out' : 1,
+  'leave_one_out' : 1,  #LOSO
+
+  # Normalize
+  'normalize'     : 0,
+  # PCA
+  'pca'           : 1,
 
   # Debugging properties
   'logging'       : 1,
   'write_csv'     : 0,
 
   # HMM properties
-  'window_size'       : '3', # in seconds
-  'sub_window_size'   : '0.1', # in seconds
+  'window_size'       : 3, # in seconds
+  'sub_window_size'   : 0.1, # in seconds
 
   'remove_bias'   : 0 # TODO look at this later is this is even required
 }

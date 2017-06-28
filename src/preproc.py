@@ -9,11 +9,14 @@ from scipy import io
 import struct
 import logging
 from features import *
+from sklearn.decomposition import PCA
 
 log_config = config['logging']
 logger = logging.getLogger(__name__)
 def process_train_data(train_dir, train_files):
   user_segment_dict = defaultdict(list)
+  all_features = np.empty((0, config['num_features']))
+  all_features_files = []
 
   for train_file in train_files:
     file_path = os.path.join(train_dir, train_file)
@@ -61,12 +64,36 @@ def process_train_data(train_dir, train_files):
         config['output_dir']+train_file+"_act_"+str(activity_type)+"_grp_"+str(activity_group_no)+"_seg_"+str(i)+".mfcc"
 
         # FIXME assign 15 to a meaningful variable
-        segment_features = compute_features(segment, 15)
+        segment_features = compute_features(segment, config['num_features'])
         if segment_features.shape[0] != 0:
-          writeFeaturesToHTK(segment_features, htk_output_file_name)
-          user_segment_dict[(train_file, activity_type)].append(htk_output_file_name)
+          # if pca config is enabled, files will be written after pca analysis
+          if not config['pca']:
+            writeFeaturesToHTK(segment_features, htk_output_file_name)
+          else:
+            all_features = np.vstack([all_features, segment_features])
+            all_features_files.append(htk_output_file_name)
 
-  writeLeaveOneOutFiles(user_segment_dict)
+          user_segment_dict[(train_file, activity_type)].append(htk_output_file_name)
+      print 'i', i
+
+
+  if config['pca']:
+    # capture 95% of the data
+    pca = PCA(0.95)
+    pca_all_features = pca.fit_transform(all_features)
+
+    print 'original shape: ', all_features.shape, 'pca shape: ', pca_all_features.shape
+
+    num_samples_per_file = int(config['window_size']*100 / (config['sub_window_size']*100))
+    start  = 0
+    end = pca_all_features.shape[0]
+    counter = 0
+    for i in range(start, end, num_samples_per_file):
+      writeFeaturesToHTK(pca_all_features[i:i+num_samples_per_file], all_features_files[counter])
+      counter += 1
+
+  if config['leave_one_out']:
+    writeLeaveOneOutFiles(user_segment_dict)
 
 def writeLeaveOneOutFiles(user_segment_dict):
   newline = "\n" # :)
@@ -250,7 +277,6 @@ def segment_signal(data, window_size=int(config['window_size'])*100):
       segments.append(window_df)
 
     s = "start: ", start, " end: ", end
-    logger.info(s)
 
   logger.info('number of segments: ' + str(len(segments)))
 

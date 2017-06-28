@@ -17,7 +17,7 @@ def stddev(df):
   z = df['z-axis'].std(axis=0)
   return x, y, z
 
-# Dicrete fast fourier transform
+# Dicrete fast fourier transform, power spectrum (TODO)
 def dfft(df):
   x = np.fft.fft(df['x-axis'])
   y = np.fft.fft(df['y-axis'])
