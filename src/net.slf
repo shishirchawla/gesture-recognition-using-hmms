@@ -1,5 +1,5 @@
 VERSION=1.0
-N=10   L=16   
+N=10   L=15   
 I=0    W=!NULL               
 I=1    W=!NULL               
 I=2    W=ACTIVITY1           
@@ -10,19 +10,18 @@ I=6    W=ACTIVITY4
 I=7    W=ACTIVITY5           
 I=8    W=ACTIVITY6           
 I=9    W=ACTIVITYOTHER       
-J=0     S=0    E=1    
-J=1     S=3    E=1    
-J=2     S=0    E=2    
-J=3     S=2    E=3    
-J=4     S=4    E=3    
-J=5     S=5    E=3    
-J=6     S=6    E=3    
-J=7     S=7    E=3    
-J=8     S=8    E=3    
-J=9     S=9    E=3    
-J=10    S=0    E=4    
-J=11    S=0    E=5    
-J=12    S=0    E=6    
-J=13    S=0    E=7    
-J=14    S=0    E=8    
-J=15    S=0    E=9    
+J=0     S=3    E=1    
+J=1     S=0    E=2    
+J=2     S=2    E=3    
+J=3     S=4    E=3    
+J=4     S=5    E=3    
+J=5     S=6    E=3    
+J=6     S=7    E=3    
+J=7     S=8    E=3    
+J=8     S=9    E=3    
+J=9     S=0    E=4    
+J=10    S=0    E=5    
+J=11    S=0    E=6    
+J=12    S=0    E=7    
+J=13    S=0    E=8    
+J=14    S=0    E=9    
