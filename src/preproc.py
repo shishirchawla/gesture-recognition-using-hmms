@@ -10,6 +10,9 @@ import struct
 import logging
 from features import *
 from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import Normalizer
+from sklearn.pipeline import Pipeline
 
 log_config = config['logging']
 logger = logging.getLogger(__name__)
@@ -79,8 +82,9 @@ def process_train_data(train_dir, train_files):
 
   if config['pca']:
     # capture 95% of the data
-    pca = PCA(0.95)
-    pca_all_features = pca.fit_transform(all_features)
+    pipeline = Pipeline([('scaling', Normalizer()), ('pca', PCA(0.95))])
+    #pca = PCA(n_components=8)
+    pca_all_features = pipeline.fit_transform(all_features)
 
     print 'original shape: ', all_features.shape, 'pca shape: ', pca_all_features.shape
 
@@ -300,10 +304,11 @@ def compute_features(df, num_features, window_size=int(float(config['sub_window_
     # Add standard deviation
     window_features = np.append(window_features, stddev(window_df))
     # Split energy into real and imaginary
-    energyx, energyy, energyz = energy(window_df)
-    window_features = np.append(window_features, [np.real(energyx), np.imag(energyx)])
-    window_features = np.append(window_features, [np.real(energyy), np.imag(energyy)])
-    window_features = np.append(window_features, [np.real(energyz), np.imag(energyz)])
+    #energyx, energyy, energyz = energy(window_df)
+    #window_features = np.append(window_features, [np.real(energyx), np.imag(energyx)])
+    #window_features = np.append(window_features, [np.real(energyy), np.imag(energyy)])
+    #window_features = np.append(window_features, [np.real(energyz), np.imag(energyz)])
+    window_features = np.append(window_features, energy(window_df))
     # Add correlation
     window_features = np.append(window_features, correlation(window_df))
     s = "sub start: ", start, " end: ", end

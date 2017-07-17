@@ -15,8 +15,11 @@ HRest -A -D -T 1 -S trainlist_ascending.txt -M model/hmm3 -H model/hmm2/Ascendin
 HRest -A -D -T 1 -S trainlist_descending.txt -M model/hmm3 -H model/hmm2/Descending Descending
 
 # Parse grammar
-HParse -A -D -T 1 def/gram.txt net.slf
+HParse -A -D -T 1 def/gram.txt net.slf   (HParse gram wdnet)
 HSGen -A -D -n 2 -s net.slf def/dict.txt
 
 # Classify
 HVite -A -D -T 1 -w net.slf -H model/hmm3/all -i reco.mlf def/dict.txt hmmlist.txt data/mfcc/subject108.dat_13_II.bin
+
+
+HHEd -M ../hmm2 tmm.hed hmmlist.txt

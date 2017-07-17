@@ -19,17 +19,17 @@ def stddev(df):
 
 # Dicrete fast fourier transform, power spectrum (TODO)
 def dfft(df):
-  x = np.fft.fft(df['x-axis'])
-  y = np.fft.fft(df['y-axis'])
-  z = np.fft.fft(df['z-axis'])
+  x = np.fft.rfft(df['x-axis'])
+  y = np.fft.rfft(df['y-axis'])
+  z = np.fft.rfft(df['z-axis'])
   return x, y, z
 
 # Energy
 def energy(df):
   x, y, z = dfft(df)
-  x = np.mean(np.square(x))
-  y = np.mean(np.square(y))
-  z = np.mean(np.square(z))
+  x = np.abs(np.mean(np.square(x)))
+  y = np.abs(np.mean(np.square(y)))
+  z = np.abs(np.mean(np.square(z)))
   return x, y, z
 
 # Correlation between axes

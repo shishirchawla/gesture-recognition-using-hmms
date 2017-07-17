@@ -11,7 +11,7 @@ config = {
   'output_dir'    : './data/',
 
   # number of features
-  'num_features'  : 15,
+  'num_features'  : 12,
 
   # Testing config
   'leave_one_out' : 1,  #LOSO
