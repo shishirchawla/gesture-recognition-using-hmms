@@ -1,0 +1,2 @@
+while read p; do cp ../data/S3-ADL3.dat_act_105_grp_5_seg_0.lab $p; done < new ;
+while read p; do echo $p; touch $p; done < new ;
