@@ -18,8 +18,13 @@ log_config = config['logging']
 logger = logging.getLogger(__name__)
 def process_train_data(train_dir, train_files):
   user_segment_dict = defaultdict(list)
-  all_features = np.empty((0, config['num_features']))
-  all_features_files = []
+
+  train_activity_feature_dict = dict()
+  train_activity_feature_files = defaultdict(list)
+  test_activity_feature_dict = dict()
+  test_activity_feature_files = defaultdict(list)
+  #all_features = np.empty((0, config['num_features']))
+  #all_features_files = []
 
   for train_file in train_files:
     file_path = os.path.join(train_dir, train_file)
@@ -73,28 +78,53 @@ def process_train_data(train_dir, train_files):
           if not config['pca']:
             writeFeaturesToHTK(segment_features, htk_output_file_name)
           else:
-            all_features = np.vstack([all_features, segment_features])
-            all_features_files.append(htk_output_file_name)
+            # FIXME generating files for testing user S1
+            if train_file.split('-')[0] == 'S1':
+              #test_activity_feature_dict[activity_type].append(segment_features)
+              if activity_type not in test_activity_feature_dict:
+                test_activity_feature_dict[activity_type] = np.empty((0, config['num_features']))
+              test_activity_feature_dict[activity_type] = np.vstack([test_activity_feature_dict[activity_type], segment_features])
+              test_activity_feature_files[activity_type].append(htk_output_file_name)
+            else:
+              if activity_type not in train_activity_feature_dict:
+                train_activity_feature_dict[activity_type] = np.empty((0, config['num_features']))
+              train_activity_feature_dict[activity_type] = np.vstack([train_activity_feature_dict[activity_type], segment_features])
+              #all_features = np.vstack([all_features, segment_features])
+              train_activity_feature_files[activity_type].append(htk_output_file_name)
+              #all_features_files.append(htk_output_file_name)
 
           user_segment_dict[(train_file, activity_type)].append(htk_output_file_name)
       print 'i', i
 
 
   if config['pca']:
-    # capture 95% of the data
-    pipeline = Pipeline([('scaling', Normalizer()), ('pca', PCA(0.95))])
-    #pca = PCA(n_components=8)
-    pca_all_features = pipeline.fit_transform(all_features)
+    pipeline = None
+    for activity, segments in train_activity_feature_dict.iteritems():
+      pipeline = Pipeline([('scaling', StandardScaler()), ('pca', PCA(n_components=8))])
+      pca_features = pipeline.fit_transform(segments)
 
-    print 'original shape: ', all_features.shape, 'pca shape: ', pca_all_features.shape
+      print 'original shape: ', segments.shape, 'pca shape: ', pca_features.shape
 
-    num_samples_per_file = int(config['window_size']*100 / (config['sub_window_size']*100))
-    start  = 0
-    end = pca_all_features.shape[0]
-    counter = 0
-    for i in range(start, end, num_samples_per_file):
-      writeFeaturesToHTK(pca_all_features[i:i+num_samples_per_file], all_features_files[counter])
-      counter += 1
+      num_samples_per_file = int(config['window_size'] / config['sub_window_size'])
+      start  = 0
+      end = pca_features.shape[0]
+      counter = 0
+      for i in range(start, end, num_samples_per_file):
+        writeFeaturesToHTK(pca_features[i:i+num_samples_per_file], train_activity_feature_files[activity][counter])
+        counter += 1
+
+    for activity, segments in test_activity_feature_dict.iteritems():
+      pca_features = pipeline.transform(segments)
+
+      print 'original shape: ', segments.shape, 'pca shape: ', pca_features.shape
+
+      num_samples_per_file = int(config['window_size'] / config['sub_window_size'])
+      start  = 0
+      end = pca_features.shape[0]
+      counter = 0
+      for i in range(start, end, num_samples_per_file):
+        writeFeaturesToHTK(pca_features[i:i+num_samples_per_file], test_activity_feature_files[activity][counter])
+        counter += 1
 
   if config['leave_one_out']:
     writeLeaveOneOutFiles(user_segment_dict)

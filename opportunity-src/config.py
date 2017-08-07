@@ -5,7 +5,7 @@ config = {
   'dataset_dir'   : '../../data/OpportunityChallengeDatasetTasksAB_2011_08_12/',
   'users'         : ['S1', 'S2', 'S3'],
   'train_files'   : ['S1-ADL1.dat', 'S1-ADL2.dat', 'S1-ADL3.dat',
-                     'S1-ADL4.dat', 'S1-ADL5.dat', 'S1-Drill.dat',
+                     'S1-Drill.dat',
                      'S2-ADL1.dat', 'S2-ADL2.dat', 'S2-ADL3.dat',
                      'S2-Drill.dat',
                      'S3-ADL1.dat', 'S3-ADL2.dat', 'S3-ADL3.dat',
