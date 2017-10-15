@@ -6,8 +6,11 @@ import os
 import logging
 
 def main():
-  setup_loggin()
+  # Setup logging
+  setup_logging()
+  # Create data directories if they don't exist
   create_dirs()
+  # Process data
   process_train_data(config['dataset_dir'], config['train_files'])
 
 def create_dirs():
@@ -17,7 +20,7 @@ def create_dirs():
     if not os.path.exists(train_file):
       os.makedirs(train_file+'-data')
 
-def setup_loggin():
+def setup_logging():
   logging.getLogger().setLevel(logging.DEBUG)
 
   formatter = logging.Formatter('%(asctime)s - %(name)-30s - %(levelname)-8s - %(message)s')
