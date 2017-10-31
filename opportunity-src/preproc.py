@@ -32,7 +32,7 @@ def process_train_data(train_dir, train_files):
     # Read data
     readings_df = loadOpportunity(file_path)
 
-    if config['normalize']:
+    if config['normalize_acc']:
       # Normalize data
       readings_df['x-axis'] = feature_normalize(readings_df['x-axis'])
       readings_df['y-axis'] = feature_normalize(readings_df['y-axis'])
@@ -98,14 +98,30 @@ def process_train_data(train_dir, train_files):
 
 
   if config['pca']:
-    pipeline = None
+    if config['normalize']:
+      train_feature_matrix = np.concatenate(train_activity_feature_dict.values(), axis=0)
+      train_mean = np.mean(train_feature_matrix, axis=0)
+      train_std = np.std(train_feature_matrix, axis=0)
+      train_feature_matrix = (train_feature_matrix-train_mean)/train_std
+
+      #pipeline = Pipeline([('scaling', StandardScaler()), ('pca', PCA(n_components=30))])
+      pipeline = Pipeline([('pca', PCA(n_components=30))])
+      #pipeline.fit(np.concatenate(train_activity_feature_dict.values(), axis=0))
+      pipeline.fit(train_feature_matrix)
+
     for activity, segments in train_activity_feature_dict.iteritems():
-      pipeline = Pipeline([('scaling', StandardScaler()), ('pca', PCA(n_components=8))])
-      pca_features = pipeline.fit_transform(segments)
+      #pca_features = pipeline.transform(segments) # FIXME for pca
+
+      if config['normalize']:
+        pca_features = (segments - train_mean)/train_std
+        pca_features = pipeline.transform(pca_features)
 
       print 'original shape: ', segments.shape, 'pca shape: ', pca_features.shape
 
       num_samples_per_file = int(config['window_size'] / config['sub_window_size'])
+
+      print 'number of samples per file', num_samples_per_file
+
       start  = 0
       end = pca_features.shape[0]
       counter = 0
@@ -114,7 +130,11 @@ def process_train_data(train_dir, train_files):
         counter += 1
 
     for activity, segments in test_activity_feature_dict.iteritems():
-      pca_features = pipeline.transform(segments)
+      #pca_features = pipeline.transform(segments)  # FIXME for pca
+
+      if config['normalize']:
+        pca_features = (segments - train_mean)/train_std
+        pca_features = pipeline.transform(pca_features)
 
       print 'original shape: ', segments.shape, 'pca shape: ', pca_features.shape
 
@@ -281,10 +301,16 @@ def compute_features(df, num_features, window_size=int(float(config['sub_window_
     window_features = np.append(window_features, mean(window_df))
     # Add standard deviation
     window_features = np.append(window_features, stddev(window_df))
-    # Add energy
-    window_features = np.append(window_features, energy(window_df))
-    # Add correlation
-    window_features = np.append(window_features, correlation(window_df))
+    # Add kurtosis
+    window_features = np.append(window_features, kurtosis(window_df))
+    # Add skew
+    window_features = np.append(window_features, skew(window_df))
+    # Add ecdf
+    window_features = np.append(window_features, ecdf(window_df))
+#    # Add energy
+#    window_features = np.append(window_features, energy(window_df))
+#    # Add correlation
+#    window_features = np.append(window_features, correlation(window_df))
 
     features = np.vstack([features, window_features])
 

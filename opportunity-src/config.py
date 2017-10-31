@@ -18,8 +18,10 @@ config = {
   'null_class_label'  : 0,
 
   # number of features
-  'num_features'  : 12,
+  'num_features'  : 12+((5*3)+3),
 
+  # normalize acc data
+  'normalize_acc' : 0,
   # Testing config
   'leave_one_out' : 1,  #LOSO
 
@@ -34,7 +36,7 @@ config = {
 
   # HMM properties
   'window_size'       : 2,    # in seconds
-  'sub_window_size'   : 0.1,  # in seconds
+  'sub_window_size'   : 0.4,  # in seconds
 
   'remove_bias'   : 0 # TODO look at this later is this is even required
 }
