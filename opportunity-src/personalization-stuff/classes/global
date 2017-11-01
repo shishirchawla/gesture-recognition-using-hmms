@@ -1,0 +1,5 @@
+~b "global"
+<MMFIDMASK> CUED_WSJ*
+<PARAMETERS> MIXBASE
+<NUMCLASSES> 1
+  <CLASS> 1  {*.state[2-6].mix[1-12]}

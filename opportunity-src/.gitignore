@@ -1,0 +1,11 @@
+.idea
+*.pyc
+S1-data/
+S2-data/
+S3-data/
+data/
+model/hmm*
+opportunity.log
+original.txt
+results.txt
+reco.mlf

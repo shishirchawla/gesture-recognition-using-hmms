@@ -1,5 +1,0 @@
-HERest -C config.global -S adapt.scp -H model/hmm3/Activity101 -u a -z -K xforms mllr1 -J adaptdef -h '*/%%%%%%_*.mfc' tiedlist
-HERest -A -D -T 1 -C ../adaptdef/config.global -S ../adaptdef/adaptlist_act_101.txt -u a -z s -K xforms mllr1 -J ../adaptdef -h '*%%%%%%%%%%%%.mfcc' -H ../model/hmm3/Activity101 tiedlist
-HERest -A -D -T 1 -C ../adaptdef/config.global -S ../adaptdef/adaptlist_act_101.txt -u a -z s -K xforms mllr1 -J ../adaptdef -h '*%%-*grp%*%%%%%%%.mfcc' -H ../model/hmm3/Activity101 tiedlist
-
-HERest -A -D -T 1 -C ../adaptdef/config.global -S ../adaptdef/adaptlist_sub3.txt -z s -J ../adaptdef -d ../model/hmm3/ -M model tiedlist

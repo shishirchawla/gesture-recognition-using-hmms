@@ -1,0 +1,83 @@
+S1
+0.855118110236
+
+S1
+0.866666666667
+
+S1 (with adaptation - all)
+0.832545931759
+
+S1 (with adaptation no variance)
+0.867716535433
+
+S1 (with adaptation no mean no variance - weights and transition)
+0.871391076115
+
+S1 (with adaptation no mean no variance no transitions - only weights)
+0.867716535433
+
+S1 (with adaptation no mean no variance no transitions - only transitions)
+0.854593175853
+
+S1 (only mean)
+0.874540682415
+
+S1 (only mean and transition)
+0.876640419948
+
+S1 (only mean and weight)
+0.867716535433
+
+S1 (tmm with adaptation - all)
+0.835490830636
+
+S1 (tmm only mean and transition)
+0.848081023454
+
+S1 (tmm with adaptation no mean no variance - weights and transition)
+0.835100742312
+
+S1 (tmm only weights)
+0.835630965005
+
+S2
+0.843304843305
+
+S2
+0.834188034188
+
+S2 (all)
+0.85754985755
+
+S2 (all - variance)
+0.862678062678
+
+S2 (only mean)
+0.868376068376
+
+S2 (with adaptation no mean no variance - weights and transition)
+0.842165242165
+
+S2 (mean and transition)
+0.868945868946
+
+S3
+0.890768487192
+
+S3
+0.888781431335
+
+S3 (all)
+0.892701788304
+
+S3 (all - variance)
+0.927501208313
+
+S3 (only mean)
+0.925567907202
+
+S3 (with adaptation no mean no variance - weights and transition)
+0.886418559691
+
+S3 (mean and transition)
+0.926534557757
