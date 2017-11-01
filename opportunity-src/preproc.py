@@ -265,17 +265,23 @@ def writeDfToHTK(df, output_file_name):
 ########################################################
 def windows(data, size):
     start = 0
+    size_with_buffer = size + config['num_samples_per_sub_window'] - 1
     while start < data.count():
-        yield start, start + size
+        yield start, start + size_with_buffer
+        start += int(size*config['sliding_window_overlap'])
+
+def subwindows(data, size):
+    start = 0
+    while start + config['num_samples_per_sub_window'] < data.count():
+        yield start, start + config['num_samples_per_sub_window']
         start += int(size)
 
 def segment_signal(data, window_size=int(config['window_size'])*config['sampling_freq']):
-  #segments = np.empty((0, window_size, 3))
   segments = []
-  #labels = np.empty((0))
   for (start, end) in windows(data["timestamp"], window_size):
     window_df = data[start:end]
-    if(len(data["timestamp"][start:end]) == window_size):
+    window_size_with_buffer = window_size + config['num_samples_per_sub_window'] - 1
+    if(len(data["timestamp"][start:end]) == window_size_with_buffer):
       segments.append(window_df)
     else:
       logger.info('Activity type: ' + str(data["activity"].iloc[0]))
@@ -293,7 +299,7 @@ def compute_features(df, num_features, window_size=int(float(config['sub_window_
   if df.isnull().values.any():
     return features
 
-  for (start, end) in windows(df["timestamp"], window_size):
+  for (start, end) in subwindows(df["timestamp"], window_size):
     window_df = df[start:end]
     window_features = np.array([])
 

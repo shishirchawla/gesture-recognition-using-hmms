@@ -13,9 +13,11 @@ config = {
   'output_dir'    : './data/',
 
   # Data properties
-  'sampling_freq'     : 30,   # in hz
-  'activity_types'    : ['101', '102', '104', '105'],
-  'null_class_label'  : 0,
+  'sampling_freq'               : 30,   # in hz
+  'activity_types'              : ['101', '102', '104', '105'],
+  'null_class_label'            : 0,
+  'num_samples_per_sub_window'  : 50,
+  'sliding_window_overlap'      : 0.25, # 1/4 times window length
 
   # number of features
   'num_features'  : 12+((5*3)+3),
@@ -36,7 +38,7 @@ config = {
 
   # HMM properties
   'window_size'       : 2,    # in seconds
-  'sub_window_size'   : 0.4,  # in seconds
+  'sub_window_size'   : 0.1,  # in seconds
 
   'remove_bias'   : 0 # TODO look at this later is this is even required
 }

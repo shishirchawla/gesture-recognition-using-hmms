@@ -1,12 +1,15 @@
 #!/bin/bash
 
 train_steps=3
-num_subjects=3
+num_subjects=1
 activities=(101 102 104 105)
 subject_prefix="S"
 
-for s in $(seq 3 $num_subjects)
+for s in $(seq 1 $num_subjects)
 do
+#  if false
+#  then
+
   # Train
   # Cleanup old hmms
   rm -rf ./model/hmm*
@@ -56,6 +59,8 @@ do
   echo >> testing.txt
 
   echo 'Independent model training complete!'
+
+#  fi
 
   cp hmmlist.txt ./model/hmm$train_steps/
   cp tmm.hed ./model/hmm$train_steps/
