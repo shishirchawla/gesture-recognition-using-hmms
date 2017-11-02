@@ -1,7 +1,7 @@
 #!/bin/bash
 
 train_steps=3
-num_subjects=1
+num_subjects=3
 activities=(101 102 104 105)
 subject_prefix="S"
 
@@ -55,8 +55,12 @@ do
   awk 'NR%3==0' reco.mlf | awk '{print $3}' > results.txt
   sed -n 's/^.*_act_\([0-9]*\).*$/\1/p' $subject_prefix$s-data/testlist.txt | grep --color=never -o '[0-9]\+' | awk '{print "Activity"$0}' > original.txt
   echo $subject_prefix$s >> testing.txt
-  python accuracy.py >> testing.txt
+  simple_acc=$(python accuracy.py)
+  echo $simple_acc >> testing.txt
   echo >> testing.txt
+
+  simple_acc_msg="Simple training accuracy for $subject_prefix$s is $simple_acc ."
+  echo $simple_acc_msg  | mail -s "Simple training complete for $subject_prefix$s" schawla32@gatech.edu
 
   echo 'Independent model training complete!'
 
@@ -107,7 +111,11 @@ do
   awk 'NR%3==0' reco.mlf | awk '{print $3}' > results.txt
   sed -n 's/^.*_act_\([0-9]*\).*$/\1/p' $subject_prefix$s-data/testlist.txt | grep --color=never -o '[0-9]\+' | awk '{print "Activity"$0}' > original.txt
   echo $subject_prefix$s >> testing.txt
-  python accuracy.py >> testing.txt
+  tmm_acc=$(python accuracy.py)
+  echo $tmm_acc >> testing.txt
   echo >> testing.txt
+
+  tmm_acc_msg="TMM training accuracy for $subject_prefix$s is $tmm_acc ."
+  echo $tmm_acc_msg  | mail -s "TMM training complete for $subject_prefix$s" schawla32@gatech.edu
 done
 
