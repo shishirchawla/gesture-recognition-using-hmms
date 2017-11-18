@@ -4,7 +4,7 @@ from config import config
 from collections import defaultdict
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 from scipy import io
 import struct
 import logging
@@ -304,13 +304,13 @@ def compute_features(df, num_features, window_size=int(float(config['sub_window_
     window_features = np.array([])
 
     # Add mean
-    window_features = np.append(window_features, mean(window_df))
+    #window_features = np.append(window_features, mean(window_df))
     # Add standard deviation
-    window_features = np.append(window_features, stddev(window_df))
+    #window_features = np.append(window_features, stddev(window_df))
     # Add kurtosis
-    window_features = np.append(window_features, kurtosis(window_df))
+    #window_features = np.append(window_features, kurtosis(window_df))
     # Add skew
-    window_features = np.append(window_features, skew(window_df))
+    #window_features = np.append(window_features, skew(window_df))
     # Add ecdf
     window_features = np.append(window_features, ecdf(window_df))
 #    # Add energy

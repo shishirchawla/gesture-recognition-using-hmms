@@ -46,7 +46,7 @@ def skew(df):
   return x, y, z
 
 # ECDF
-def ecdf(df, components=5): #try 10 components
+def ecdf(df, components=10): #try 10 components
     #
     #   rep = ecdfRep(data, components)
     #

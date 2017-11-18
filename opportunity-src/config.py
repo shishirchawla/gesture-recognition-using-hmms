@@ -20,7 +20,7 @@ config = {
   'sliding_window_overlap'      : 0.25, # 1/4 times window length
 
   # number of features
-  'num_features'  : 12+((5*3)+3),
+  'num_features'  : ((10*3)+3),
 
   # normalize acc data
   'normalize_acc' : 0,
@@ -38,7 +38,7 @@ config = {
 
   # HMM properties
   'window_size'       : 2,    # in seconds
-  'sub_window_size'   : 0.1,  # in seconds
+  'sub_window_size'   : 0.2,  # in seconds
 
   'remove_bias'   : 0 # TODO look at this later is this is even required
 }

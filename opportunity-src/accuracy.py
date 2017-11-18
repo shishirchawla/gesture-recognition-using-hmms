@@ -1,18 +1,21 @@
+import sys
 
-def main():
+def main(predfile, truthfile):
   results = []
   original = []
 
   count = 0
   totallines = 0
-  with open("results.txt", "r") as handler:
-    with open("original.txt", "r") as handler2:
+  with open(predfile, "r") as handler:
+    with open(truthfile, "r") as handler2:
         for line in handler:
-          if (line == handler2.readline()):
+          if (line.lower() == handler2.readline().lower()):
             count += 1
           totallines += 1
 
   print float(count)/totallines
 
 if __name__ == '__main__':
-  main();
+  predfile = sys.argv[1]
+  truthfile = sys.argv[2]
+  main(predfile, truthfile);
