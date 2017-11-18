@@ -10,3 +10,16 @@ original.txt
 results.txt
 reco.mlf
 testing.txt
+S1-original-simple.txt
+S1-original-tmm.txt
+S1-results-simple.txt
+S1-results-tmm.txt
+S2-original-simple.txt
+S2-original-tmm.txt
+S2-results-simple.txt
+S2-results-tmm.txt
+S3-original-simple.txt
+S3-original-tmm.txt
+S3-results-simple.txt
+S3-results-tmm.txt
+nohup.out
