@@ -1,0 +1,74 @@
+VERSION=1.0
+N=20   L=52   
+I=0    W=ACTIVITY405506      
+I=1    W=!NULL               
+I=2    W=ACTIVITY407521      
+I=3    W=ACTIVITY408512      
+I=4    W=ACTIVITY404508      
+I=5    W=ACTIVITY406508      
+I=6    W=ACTIVITY404511      
+I=7    W=ACTIVITY406511      
+I=8    W=ACTIVITY404519      
+I=9    W=ACTIVITY406519      
+I=10   W=ACTIVITY404505      
+I=11   W=ACTIVITY406505      
+I=12   W=ACTIVITY404520      
+I=13   W=ACTIVITY406520      
+I=14   W=ACTIVITY404517      
+I=15   W=ACTIVITY404516      
+I=16   W=ACTIVITY406517      
+I=17   W=ACTIVITY406516      
+I=18   W=!NULL               
+I=19   W=!NULL               
+J=0     S=1    E=0    
+J=1     S=19   E=0    
+J=2     S=0    E=1    
+J=3     S=2    E=1    
+J=4     S=3    E=1    
+J=5     S=4    E=1    
+J=6     S=5    E=1    
+J=7     S=6    E=1    
+J=8     S=7    E=1    
+J=9     S=8    E=1    
+J=10    S=9    E=1    
+J=11    S=10   E=1    
+J=12    S=11   E=1    
+J=13    S=12   E=1    
+J=14    S=13   E=1    
+J=15    S=14   E=1    
+J=16    S=15   E=1    
+J=17    S=16   E=1    
+J=18    S=17   E=1    
+J=19    S=1    E=2    
+J=20    S=19   E=2    
+J=21    S=1    E=3    
+J=22    S=19   E=3    
+J=23    S=1    E=4    
+J=24    S=19   E=4    
+J=25    S=1    E=5    
+J=26    S=19   E=5    
+J=27    S=1    E=6    
+J=28    S=19   E=6    
+J=29    S=1    E=7    
+J=30    S=19   E=7    
+J=31    S=1    E=8    
+J=32    S=19   E=8    
+J=33    S=1    E=9    
+J=34    S=19   E=9    
+J=35    S=1    E=10   
+J=36    S=19   E=10   
+J=37    S=1    E=11   
+J=38    S=19   E=11   
+J=39    S=1    E=12   
+J=40    S=19   E=12   
+J=41    S=1    E=13   
+J=42    S=19   E=13   
+J=43    S=1    E=14   
+J=44    S=19   E=14   
+J=45    S=1    E=15   
+J=46    S=19   E=15   
+J=47    S=1    E=16   
+J=48    S=19   E=16   
+J=49    S=1    E=17   
+J=50    S=19   E=17   
+J=51    S=1    E=18   

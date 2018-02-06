@@ -1,0 +1,2411 @@
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_406516.txt -M model/hmm0 model/proto/Activity406516 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity406516 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+81 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-205309.43750
+Iteration 2: Average LogP =-201419.40625  Change =  3890.03125
+Iteration 3: Average LogP =-199736.09375  Change =  1683.31250
+Iteration 4: Average LogP =-198822.37500  Change =   913.71875
+Iteration 5: Average LogP =-198190.48438  Change =   631.89062
+Iteration 6: Average LogP =-197590.04688  Change =   600.43750
+Iteration 7: Average LogP =-197477.10938  Change =   112.93750
+Iteration 8: Average LogP =-197380.37500  Change =    96.73438
+Iteration 9: Average LogP =-197233.95312  Change =   146.42188
+Iteration 10: Average LogP =-197127.12500  Change =   106.82812
+Iteration 11: Average LogP =-197070.10938  Change =    57.01562
+Iteration 12: Average LogP =-197011.43750  Change =    58.67188
+Iteration 13: Average LogP =-196902.14062  Change =   109.29688
+Iteration 14: Average LogP =-196837.25000  Change =    64.89062
+Iteration 15: Average LogP =-196803.51562  Change =    33.73438
+Iteration 16: Average LogP =-196788.54688  Change =    14.96875
+Iteration 17: Average LogP =-196775.04688  Change =    13.50000
+Iteration 18: Average LogP =-196771.78125  Change =     3.26562
+Iteration 19: Average LogP =-196762.90625  Change =     8.87500
+Iteration 20: Average LogP =-196738.60938  Change =    24.29688
+Estimation aborted at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406516.txt -M model/hmm1 -H model/hmm0/Activity406516 Activity406516 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406516 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+81 Examples loaded, Max length = 63, Min length = 18
+Ave LogProb at iter 1 = -196722.96875 using 81 examples
+Ave LogProb at iter 2 = -196683.95312 using 81 examples  change =   39.01562
+Ave LogProb at iter 3 = -196659.46875 using 81 examples  change =   24.48438
+Ave LogProb at iter 4 = -196637.85938 using 81 examples  change =   21.60938
+Ave LogProb at iter 5 = -196602.76562 using 81 examples  change =   35.09375
+Ave LogProb at iter 6 = -196557.00000 using 81 examples  change =   45.76562
+Ave LogProb at iter 7 = -196527.23438 using 81 examples  change =   29.76562
+Ave LogProb at iter 8 = -196495.43750 using 81 examples  change =   31.79688
+Ave LogProb at iter 9 = -196473.12500 using 81 examples  change =   22.31250
+Ave LogProb at iter 10 = -196401.31250 using 81 examples  change =   71.81250
+Ave LogProb at iter 11 = -196267.64062 using 81 examples  change =  133.67188
+Ave LogProb at iter 12 = -196084.48438 using 81 examples  change =  183.15625
+Ave LogProb at iter 13 = -196022.26562 using 81 examples  change =   62.21875
+Ave LogProb at iter 14 = -195947.64062 using 81 examples  change =   74.62500
+Ave LogProb at iter 15 = -195937.50000 using 81 examples  change =   10.14062
+Ave LogProb at iter 16 = -195933.32812 using 81 examples  change =    4.17188
+Ave LogProb at iter 17 = -195930.04688 using 81 examples  change =    3.28125
+Ave LogProb at iter 18 = -195917.81250 using 81 examples  change =   12.23438
+Ave LogProb at iter 19 = -195874.68750 using 81 examples  change =   43.12500
+Ave LogProb at iter 20 = -195799.57812 using 81 examples  change =   75.10938
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406516.txt -M model/hmm2 -H model/hmm1/Activity406516 Activity406516 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406516 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+81 Examples loaded, Max length = 63, Min length = 18
+Ave LogProb at iter 1 = -195789.45312 using 81 examples
+Ave LogProb at iter 2 = -195788.79688 using 81 examples  change =    0.65625
+Ave LogProb at iter 3 = -195788.29688 using 81 examples  change =    0.50000
+Ave LogProb at iter 4 = -195788.04688 using 81 examples  change =    0.25000
+Ave LogProb at iter 5 = -195787.95312 using 81 examples  change =    0.09375
+Ave LogProb at iter 6 = -195787.98438 using 81 examples  change =   -0.03125
+Ave LogProb at iter 7 = -195788.04688 using 81 examples  change =   -0.06250
+Ave LogProb at iter 8 = -195788.07812 using 81 examples  change =   -0.03125
+Ave LogProb at iter 9 = -195787.96875 using 81 examples  change =    0.10938
+Ave LogProb at iter 10 = -195788.04688 using 81 examples  change =   -0.07812
+Ave LogProb at iter 11 = -195788.03125 using 81 examples  change =    0.01562
+Ave LogProb at iter 12 = -195788.03125 using 81 examples  change =    0.00000
+Estimation converged at iteration 12
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406516.txt -M model/hmm3 -H model/hmm2/Activity406516 Activity406516 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406516 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+81 Examples loaded, Max length = 63, Min length = 18
+Ave LogProb at iter 1 = -195788.09375 using 81 examples
+Ave LogProb at iter 2 = -195788.07812 using 81 examples  change =    0.01562
+Ave LogProb at iter 3 = -195787.98438 using 81 examples  change =    0.09375
+Ave LogProb at iter 4 = -195788.06250 using 81 examples  change =   -0.07812
+Ave LogProb at iter 5 = -195788.04688 using 81 examples  change =    0.01562
+Ave LogProb at iter 6 = -195788.06250 using 81 examples  change =   -0.01562
+Ave LogProb at iter 7 = -195788.07812 using 81 examples  change =   -0.01562
+Ave LogProb at iter 8 = -195788.06250 using 81 examples  change =    0.01562
+Ave LogProb at iter 9 = -195788.09375 using 81 examples  change =   -0.03125
+Ave LogProb at iter 10 = -195788.04688 using 81 examples  change =    0.04688
+Ave LogProb at iter 11 = -195788.03125 using 81 examples  change =    0.01562
+Ave LogProb at iter 12 = -195788.04688 using 81 examples  change =   -0.01562
+Ave LogProb at iter 13 = -195788.04688 using 81 examples  change =    0.00000
+Estimation converged at iteration 13
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_406517.txt -M model/hmm0 model/proto/Activity406517 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity406517 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+79 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-221661.62500
+Iteration 2: Average LogP =-218251.90625  Change =  3409.71875
+Iteration 3: Average LogP =-216977.26562  Change =  1274.64062
+Iteration 4: Average LogP =-216188.53125  Change =   788.73438
+Iteration 5: Average LogP =-215835.17188  Change =   353.35938
+Iteration 6: Average LogP =-215657.95312  Change =   177.21875
+Iteration 7: Average LogP =-215494.73438  Change =   163.21875
+Iteration 8: Average LogP =-215325.76562  Change =   168.96875
+Iteration 9: Average LogP =-215086.81250  Change =   238.95312
+Iteration 10: Average LogP =-214957.43750  Change =   129.37500
+Iteration 11: Average LogP =-214882.07812  Change =    75.35938
+Iteration 12: Average LogP =-214792.45312  Change =    89.62500
+Iteration 13: Average LogP =-214690.81250  Change =   101.64062
+Iteration 14: Average LogP =-214584.90625  Change =   105.90625
+Iteration 15: Average LogP =-214371.54688  Change =   213.35938
+Iteration 16: Average LogP =-214139.10938  Change =   232.43750
+Iteration 17: Average LogP =-214065.79688  Change =    73.31250
+Iteration 18: Average LogP =-214031.71875  Change =    34.07812
+Iteration 19: Average LogP =-214009.92188  Change =    21.79688
+Iteration 20: Average LogP =-213964.93750  Change =    44.98438
+Estimation aborted at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406517.txt -M model/hmm1 -H model/hmm0/Activity406517 Activity406517 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406517 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+79 Examples loaded, Max length = 66, Min length = 16
+Ave LogProb at iter 1 = -213947.10938 using 79 examples
+Ave LogProb at iter 2 = -213938.85938 using 79 examples  change =    8.25000
+Ave LogProb at iter 3 = -213928.15625 using 79 examples  change =   10.70312
+Ave LogProb at iter 4 = -213912.15625 using 79 examples  change =   16.00000
+Ave LogProb at iter 5 = -213898.04688 using 79 examples  change =   14.10938
+Ave LogProb at iter 6 = -213888.90625 using 79 examples  change =    9.14062
+Ave LogProb at iter 7 = -213880.37500 using 79 examples  change =    8.53125
+Ave LogProb at iter 8 = -213871.46875 using 79 examples  change =    8.90625
+Ave LogProb at iter 9 = -213866.82812 using 79 examples  change =    4.64062
+Ave LogProb at iter 10 = -213860.89062 using 79 examples  change =    5.93750
+Ave LogProb at iter 11 = -213846.93750 using 79 examples  change =   13.95312
+Ave LogProb at iter 12 = -213830.37500 using 79 examples  change =   16.56250
+Ave LogProb at iter 13 = -213793.67188 using 79 examples  change =   36.70312
+Ave LogProb at iter 14 = -213748.93750 using 79 examples  change =   44.73438
+Ave LogProb at iter 15 = -213668.40625 using 79 examples  change =   80.53125
+Ave LogProb at iter 16 = -213570.50000 using 79 examples  change =   97.90625
+Ave LogProb at iter 17 = -213378.20312 using 79 examples  change =  192.29688
+Ave LogProb at iter 18 = -213144.89062 using 79 examples  change =  233.31250
+Ave LogProb at iter 19 = -213039.29688 using 79 examples  change =  105.59375
+Ave LogProb at iter 20 = -213004.60938 using 79 examples  change =   34.68750
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406517.txt -M model/hmm2 -H model/hmm1/Activity406517 Activity406517 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406517 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+79 Examples loaded, Max length = 66, Min length = 16
+Ave LogProb at iter 1 = -212983.87500 using 79 examples
+Ave LogProb at iter 2 = -212972.57812 using 79 examples  change =   11.29688
+Ave LogProb at iter 3 = -212964.53125 using 79 examples  change =    8.04688
+Ave LogProb at iter 4 = -212964.00000 using 79 examples  change =    0.53125
+Ave LogProb at iter 5 = -212964.00000 using 79 examples  change =    0.00000
+Estimation converged at iteration 5
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406517.txt -M model/hmm3 -H model/hmm2/Activity406517 Activity406517 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406517 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+79 Examples loaded, Max length = 66, Min length = 16
+Ave LogProb at iter 1 = -212963.92188 using 79 examples
+Ave LogProb at iter 2 = -212963.23438 using 79 examples  change =    0.68750
+Ave LogProb at iter 3 = -212963.26562 using 79 examples  change =   -0.03125
+Ave LogProb at iter 4 = -212963.31250 using 79 examples  change =   -0.04688
+Ave LogProb at iter 5 = -212963.34375 using 79 examples  change =   -0.03125
+Ave LogProb at iter 6 = -212963.29688 using 79 examples  change =    0.04688
+Ave LogProb at iter 7 = -212963.31250 using 79 examples  change =   -0.01562
+Ave LogProb at iter 8 = -212963.09375 using 79 examples  change =    0.21875
+Ave LogProb at iter 9 = -212963.01562 using 79 examples  change =    0.07812
+Ave LogProb at iter 10 = -212962.98438 using 79 examples  change =    0.03125
+Ave LogProb at iter 11 = -212963.01562 using 79 examples  change =   -0.03125
+Ave LogProb at iter 12 = -212962.98438 using 79 examples  change =    0.03125
+Ave LogProb at iter 13 = -212962.96875 using 79 examples  change =    0.01562
+Ave LogProb at iter 14 = -212963.03125 using 79 examples  change =   -0.06250
+Ave LogProb at iter 15 = -212963.01562 using 79 examples  change =    0.01562
+Ave LogProb at iter 16 = -212963.10938 using 79 examples  change =   -0.09375
+Ave LogProb at iter 17 = -212963.01562 using 79 examples  change =    0.09375
+Ave LogProb at iter 18 = -212962.98438 using 79 examples  change =    0.03125
+Ave LogProb at iter 19 = -212962.96875 using 79 examples  change =    0.01562
+Ave LogProb at iter 20 = -212963.01562 using 79 examples  change =   -0.04688
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_404516.txt -M model/hmm0 model/proto/Activity404516 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity404516 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+78 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-201336.53125
+Iteration 2: Average LogP =-198162.51562  Change =  3174.01562
+Iteration 3: Average LogP =-196592.57812  Change =  1569.93750
+Iteration 4: Average LogP =-195682.73438  Change =   909.84375
+Iteration 5: Average LogP =-194990.07812  Change =   692.65625
+Iteration 6: Average LogP =-194190.26562  Change =   799.81250
+Iteration 7: Average LogP =-193818.78125  Change =   371.48438
+Iteration 8: Average LogP =-193670.82812  Change =   147.95312
+Iteration 9: Average LogP =-193624.53125  Change =    46.29688
+Iteration 10: Average LogP =-193604.32812  Change =    20.20312
+Iteration 11: Average LogP =-193584.39062  Change =    19.93750
+Iteration 12: Average LogP =-193564.70312  Change =    19.68750
+Iteration 13: Average LogP =-193530.34375  Change =    34.35938
+Iteration 14: Average LogP =-193521.15625  Change =     9.18750
+Iteration 15: Average LogP =-193519.18750  Change =     1.96875
+Iteration 16: Average LogP =-193518.93750  Change =     0.25000
+Iteration 17: Average LogP =-193518.93750  Change =     0.00000
+Estimation converged at iteration 18
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404516.txt -M model/hmm1 -H model/hmm0/Activity404516 Activity404516 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404516 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+78 Examples loaded, Max length = 65, Min length = 14
+Ave LogProb at iter 1 = -193518.90625 using 78 examples
+Ave LogProb at iter 2 = -193518.70312 using 78 examples  change =    0.20312
+Ave LogProb at iter 3 = -193516.65625 using 78 examples  change =    2.04688
+Ave LogProb at iter 4 = -193513.89062 using 78 examples  change =    2.76562
+Ave LogProb at iter 5 = -193512.56250 using 78 examples  change =    1.32812
+Ave LogProb at iter 6 = -193511.67188 using 78 examples  change =    0.89062
+Ave LogProb at iter 7 = -193509.40625 using 78 examples  change =    2.26562
+Ave LogProb at iter 8 = -193508.37500 using 78 examples  change =    1.03125
+Ave LogProb at iter 9 = -193507.04688 using 78 examples  change =    1.32812
+Ave LogProb at iter 10 = -193505.79688 using 78 examples  change =    1.25000
+Ave LogProb at iter 11 = -193503.67188 using 78 examples  change =    2.12500
+Ave LogProb at iter 12 = -193502.34375 using 78 examples  change =    1.32812
+Ave LogProb at iter 13 = -193500.10938 using 78 examples  change =    2.23438
+Ave LogProb at iter 14 = -193498.25000 using 78 examples  change =    1.85938
+Ave LogProb at iter 15 = -193488.35938 using 78 examples  change =    9.89062
+Ave LogProb at iter 16 = -193478.04688 using 78 examples  change =   10.31250
+Ave LogProb at iter 17 = -193476.59375 using 78 examples  change =    1.45312
+Ave LogProb at iter 18 = -193476.21875 using 78 examples  change =    0.37500
+Ave LogProb at iter 19 = -193475.51562 using 78 examples  change =    0.70312
+Ave LogProb at iter 20 = -193475.25000 using 78 examples  change =    0.26562
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404516.txt -M model/hmm2 -H model/hmm1/Activity404516 Activity404516 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404516 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+78 Examples loaded, Max length = 65, Min length = 14
+Ave LogProb at iter 1 = -193475.18750 using 78 examples
+Ave LogProb at iter 2 = -193475.20312 using 78 examples  change =   -0.01562
+Ave LogProb at iter 3 = -193475.25000 using 78 examples  change =   -0.04688
+Ave LogProb at iter 4 = -193475.17188 using 78 examples  change =    0.07812
+Ave LogProb at iter 5 = -193475.20312 using 78 examples  change =   -0.03125
+Ave LogProb at iter 6 = -193475.17188 using 78 examples  change =    0.03125
+Ave LogProb at iter 7 = -193474.90625 using 78 examples  change =    0.26562
+Ave LogProb at iter 8 = -193474.93750 using 78 examples  change =   -0.03125
+Ave LogProb at iter 9 = -193474.90625 using 78 examples  change =    0.03125
+Ave LogProb at iter 10 = -193474.98438 using 78 examples  change =   -0.07812
+Ave LogProb at iter 11 = -193474.82812 using 78 examples  change =    0.15625
+Ave LogProb at iter 12 = -193474.12500 using 78 examples  change =    0.70312
+Ave LogProb at iter 13 = -193474.10938 using 78 examples  change =    0.01562
+Ave LogProb at iter 14 = -193474.17188 using 78 examples  change =   -0.06250
+Ave LogProb at iter 15 = -193474.17188 using 78 examples  change =    0.00000
+Estimation converged at iteration 15
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404516.txt -M model/hmm3 -H model/hmm2/Activity404516 Activity404516 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404516 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+78 Examples loaded, Max length = 65, Min length = 14
+Ave LogProb at iter 1 = -193474.15625 using 78 examples
+Ave LogProb at iter 2 = -193474.18750 using 78 examples  change =   -0.03125
+Ave LogProb at iter 3 = -193473.84375 using 78 examples  change =    0.34375
+Ave LogProb at iter 4 = -193473.76562 using 78 examples  change =    0.07812
+Ave LogProb at iter 5 = -193473.79688 using 78 examples  change =   -0.03125
+Ave LogProb at iter 6 = -193473.76562 using 78 examples  change =    0.03125
+Ave LogProb at iter 7 = -193473.75000 using 78 examples  change =    0.01562
+Ave LogProb at iter 8 = -193473.75000 using 78 examples  change =    0.00000
+Estimation converged at iteration 8
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_404517.txt -M model/hmm0 model/proto/Activity404517 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity404517 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+76 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-213185.51562
+Iteration 2: Average LogP =-210845.87500  Change =  2339.64062
+Iteration 3: Average LogP =-209783.87500  Change =  1062.00000
+Iteration 4: Average LogP =-209120.04688  Change =   663.82812
+Iteration 5: Average LogP =-208537.01562  Change =   583.03125
+Iteration 6: Average LogP =-208178.84375  Change =   358.17188
+Iteration 7: Average LogP =-208002.34375  Change =   176.50000
+Iteration 8: Average LogP =-207943.09375  Change =    59.25000
+Iteration 9: Average LogP =-207839.28125  Change =   103.81250
+Iteration 10: Average LogP =-207762.95312  Change =    76.32812
+Iteration 11: Average LogP =-207611.45312  Change =   151.50000
+Iteration 12: Average LogP =-207405.10938  Change =   206.34375
+Iteration 13: Average LogP =-207284.48438  Change =   120.62500
+Iteration 14: Average LogP =-207231.39062  Change =    53.09375
+Iteration 15: Average LogP =-207187.07812  Change =    44.31250
+Iteration 16: Average LogP =-207159.21875  Change =    27.85938
+Iteration 17: Average LogP =-207143.15625  Change =    16.06250
+Iteration 18: Average LogP =-207130.12500  Change =    13.03125
+Iteration 19: Average LogP =-207111.96875  Change =    18.15625
+Iteration 20: Average LogP =-207082.62500  Change =    29.34375
+Estimation aborted at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404517.txt -M model/hmm1 -H model/hmm0/Activity404517 Activity404517 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404517 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+76 Examples loaded, Max length = 52, Min length = 4
+Ave LogProb at iter 1 = -207071.32812 using 76 examples
+Ave LogProb at iter 2 = -207065.93750 using 76 examples  change =    5.39062
+Ave LogProb at iter 3 = -207034.65625 using 76 examples  change =   31.28125
+Ave LogProb at iter 4 = -206999.87500 using 76 examples  change =   34.78125
+Ave LogProb at iter 5 = -206989.26562 using 76 examples  change =   10.60938
+Ave LogProb at iter 6 = -206986.43750 using 76 examples  change =    2.82812
+Ave LogProb at iter 7 = -206985.84375 using 76 examples  change =    0.59375
+Ave LogProb at iter 8 = -206984.53125 using 76 examples  change =    1.31250
+Ave LogProb at iter 9 = -206982.70312 using 76 examples  change =    1.82812
+Ave LogProb at iter 10 = -206981.23438 using 76 examples  change =    1.46875
+Ave LogProb at iter 11 = -206980.04688 using 76 examples  change =    1.18750
+Ave LogProb at iter 12 = -206979.76562 using 76 examples  change =    0.28125
+Ave LogProb at iter 13 = -206978.40625 using 76 examples  change =    1.35938
+Ave LogProb at iter 14 = -206972.18750 using 76 examples  change =    6.21875
+Ave LogProb at iter 15 = -206967.57812 using 76 examples  change =    4.60938
+Ave LogProb at iter 16 = -206966.12500 using 76 examples  change =    1.45312
+Ave LogProb at iter 17 = -206966.04688 using 76 examples  change =    0.07812
+Ave LogProb at iter 18 = -206965.95312 using 76 examples  change =    0.09375
+Ave LogProb at iter 19 = -206966.00000 using 76 examples  change =   -0.04688
+Ave LogProb at iter 20 = -206966.01562 using 76 examples  change =   -0.01562
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404517.txt -M model/hmm2 -H model/hmm1/Activity404517 Activity404517 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404517 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+76 Examples loaded, Max length = 52, Min length = 4
+Ave LogProb at iter 1 = -206965.98438 using 76 examples
+Ave LogProb at iter 2 = -206966.04688 using 76 examples  change =   -0.06250
+Ave LogProb at iter 3 = -206965.95312 using 76 examples  change =    0.09375
+Ave LogProb at iter 4 = -206966.01562 using 76 examples  change =   -0.06250
+Ave LogProb at iter 5 = -206965.95312 using 76 examples  change =    0.06250
+Ave LogProb at iter 6 = -206965.96875 using 76 examples  change =   -0.01562
+Ave LogProb at iter 7 = -206966.03125 using 76 examples  change =   -0.06250
+Ave LogProb at iter 8 = -206966.01562 using 76 examples  change =    0.01562
+Ave LogProb at iter 9 = -206965.96875 using 76 examples  change =    0.04688
+Ave LogProb at iter 10 = -206966.00000 using 76 examples  change =   -0.03125
+Ave LogProb at iter 11 = -206966.00000 using 76 examples  change =    0.00000
+Estimation converged at iteration 11
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404517.txt -M model/hmm3 -H model/hmm2/Activity404517 Activity404517 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404517 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+76 Examples loaded, Max length = 52, Min length = 4
+Ave LogProb at iter 1 = -206965.98438 using 76 examples
+Ave LogProb at iter 2 = -206966.00000 using 76 examples  change =   -0.01562
+Ave LogProb at iter 3 = -206966.04688 using 76 examples  change =   -0.04688
+Ave LogProb at iter 4 = -206965.96875 using 76 examples  change =    0.07812
+Ave LogProb at iter 5 = -206965.92188 using 76 examples  change =    0.04688
+Ave LogProb at iter 6 = -206965.98438 using 76 examples  change =   -0.06250
+Ave LogProb at iter 7 = -206965.93750 using 76 examples  change =    0.04688
+Ave LogProb at iter 8 = -206965.96875 using 76 examples  change =   -0.03125
+Ave LogProb at iter 9 = -206965.96875 using 76 examples  change =    0.00000
+Estimation converged at iteration 9
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_406520.txt -M model/hmm0 model/proto/Activity406520 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity406520 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+117 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-149156.84375
+Iteration 2: Average LogP =-146711.93750  Change =  2444.90625
+Iteration 3: Average LogP =-145816.50000  Change =   895.43750
+Iteration 4: Average LogP =-145130.85938  Change =   685.64062
+Iteration 5: Average LogP =-144723.09375  Change =   407.76562
+Iteration 6: Average LogP =-144444.95312  Change =   278.14062
+Iteration 7: Average LogP =-144161.67188  Change =   283.28125
+Iteration 8: Average LogP =-143852.18750  Change =   309.48438
+Iteration 9: Average LogP =-143209.48438  Change =   642.70312
+Iteration 10: Average LogP =-142916.15625  Change =   293.32812
+Iteration 11: Average LogP =-142756.95312  Change =   159.20312
+Iteration 12: Average LogP =-142571.93750  Change =   185.01562
+Iteration 13: Average LogP =-142262.75000  Change =   309.18750
+Iteration 14: Average LogP =-142038.76562  Change =   223.98438
+Iteration 15: Average LogP =-141978.43750  Change =    60.32812
+Iteration 16: Average LogP =-141919.60938  Change =    58.82812
+Iteration 17: Average LogP =-141896.87500  Change =    22.73438
+Iteration 18: Average LogP =-141877.32812  Change =    19.54688
+Iteration 19: Average LogP =-141864.04688  Change =    13.28125
+Iteration 20: Average LogP =-141844.17188  Change =    19.87500
+Estimation aborted at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406520.txt -M model/hmm1 -H model/hmm0/Activity406520 Activity406520 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406520 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+117 Examples loaded, Max length = 75, Min length = 12
+Ave LogProb at iter 1 = -141838.98438 using 117 examples
+Ave LogProb at iter 2 = -141820.20312 using 117 examples  change =   18.78125
+Ave LogProb at iter 3 = -141802.31250 using 117 examples  change =   17.89062
+Ave LogProb at iter 4 = -141782.89062 using 117 examples  change =   19.42188
+Ave LogProb at iter 5 = -141770.17188 using 117 examples  change =   12.71875
+Ave LogProb at iter 6 = -141754.32812 using 117 examples  change =   15.84375
+Ave LogProb at iter 7 = -141731.90625 using 117 examples  change =   22.42188
+Ave LogProb at iter 8 = -141713.18750 using 117 examples  change =   18.71875
+Ave LogProb at iter 9 = -141700.40625 using 117 examples  change =   12.78125
+Ave LogProb at iter 10 = -141687.48438 using 117 examples  change =   12.92188
+Ave LogProb at iter 11 = -141674.07812 using 117 examples  change =   13.40625
+Ave LogProb at iter 12 = -141663.09375 using 117 examples  change =   10.98438
+Ave LogProb at iter 13 = -141660.45312 using 117 examples  change =    2.64062
+Ave LogProb at iter 14 = -141659.87500 using 117 examples  change =    0.57812
+Ave LogProb at iter 15 = -141659.92188 using 117 examples  change =   -0.04688
+Ave LogProb at iter 16 = -141659.73438 using 117 examples  change =    0.18750
+Ave LogProb at iter 17 = -141659.65625 using 117 examples  change =    0.07812
+Ave LogProb at iter 18 = -141659.43750 using 117 examples  change =    0.21875
+Ave LogProb at iter 19 = -141659.12500 using 117 examples  change =    0.31250
+Ave LogProb at iter 20 = -141659.14062 using 117 examples  change =   -0.01562
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406520.txt -M model/hmm2 -H model/hmm1/Activity406520 Activity406520 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406520 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+117 Examples loaded, Max length = 75, Min length = 12
+Ave LogProb at iter 1 = -141658.87500 using 117 examples
+Ave LogProb at iter 2 = -141658.84375 using 117 examples  change =    0.03125
+Ave LogProb at iter 3 = -141658.57812 using 117 examples  change =    0.26562
+Ave LogProb at iter 4 = -141656.96875 using 117 examples  change =    1.60938
+Ave LogProb at iter 5 = -141653.79688 using 117 examples  change =    3.17188
+Ave LogProb at iter 6 = -141653.43750 using 117 examples  change =    0.35938
+Ave LogProb at iter 7 = -141653.23438 using 117 examples  change =    0.20312
+Ave LogProb at iter 8 = -141653.04688 using 117 examples  change =    0.18750
+Ave LogProb at iter 9 = -141652.87500 using 117 examples  change =    0.17188
+Ave LogProb at iter 10 = -141652.64062 using 117 examples  change =    0.23438
+Ave LogProb at iter 11 = -141652.56250 using 117 examples  change =    0.07812
+Ave LogProb at iter 12 = -141652.60938 using 117 examples  change =   -0.04688
+Ave LogProb at iter 13 = -141652.60938 using 117 examples  change =    0.00000
+Estimation converged at iteration 13
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406520.txt -M model/hmm3 -H model/hmm2/Activity406520 Activity406520 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406520 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+117 Examples loaded, Max length = 75, Min length = 12
+Ave LogProb at iter 1 = -141652.62500 using 117 examples
+Ave LogProb at iter 2 = -141652.60938 using 117 examples  change =    0.01562
+Ave LogProb at iter 3 = -141652.65625 using 117 examples  change =   -0.04688
+Ave LogProb at iter 4 = -141652.57812 using 117 examples  change =    0.07812
+Ave LogProb at iter 5 = -141652.57812 using 117 examples  change =    0.00000
+Estimation converged at iteration 5
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_404520.txt -M model/hmm0 model/proto/Activity404520 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity404520 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+118 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-136095.60938
+Iteration 2: Average LogP =-132818.45312  Change =  3277.15625
+Iteration 3: Average LogP =-131522.17188  Change =  1296.28125
+Iteration 4: Average LogP =-130768.20312  Change =   753.96875
+Iteration 5: Average LogP =-130421.00000  Change =   347.20312
+Iteration 6: Average LogP =-130308.60156  Change =   112.39844
+Iteration 7: Average LogP =-130224.99219  Change =    83.60938
+Iteration 8: Average LogP =-130141.50000  Change =    83.49219
+Iteration 9: Average LogP =-130028.11719  Change =   113.38281
+Iteration 10: Average LogP =-129887.24219  Change =   140.87500
+Iteration 11: Average LogP =-129835.36719  Change =    51.87500
+Iteration 12: Average LogP =-129792.10156  Change =    43.26562
+Iteration 13: Average LogP =-129744.48438  Change =    47.61719
+Iteration 14: Average LogP =-129709.34375  Change =    35.14062
+Iteration 15: Average LogP =-129678.38281  Change =    30.96094
+Iteration 16: Average LogP =-129629.30469  Change =    49.07812
+Iteration 17: Average LogP =-129598.76562  Change =    30.53906
+Iteration 18: Average LogP =-129563.96875  Change =    34.79688
+Iteration 19: Average LogP =-129523.50781  Change =    40.46094
+Iteration 20: Average LogP =-129478.78906  Change =    44.71875
+Estimation aborted at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404520.txt -M model/hmm1 -H model/hmm0/Activity404520 Activity404520 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404520 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+118 Examples loaded, Max length = 123, Min length = 4
+Ave LogProb at iter 1 = -129443.32812 using 118 examples
+Ave LogProb at iter 2 = -129411.50000 using 118 examples  change =   31.82812
+Ave LogProb at iter 3 = -129402.46875 using 118 examples  change =    9.03125
+Ave LogProb at iter 4 = -129391.69531 using 118 examples  change =   10.77344
+Ave LogProb at iter 5 = -129389.63281 using 118 examples  change =    2.06250
+Ave LogProb at iter 6 = -129388.03906 using 118 examples  change =    1.59375
+Ave LogProb at iter 7 = -129386.88281 using 118 examples  change =    1.15625
+Ave LogProb at iter 8 = -129385.97656 using 118 examples  change =    0.90625
+Ave LogProb at iter 9 = -129385.55469 using 118 examples  change =    0.42188
+Ave LogProb at iter 10 = -129384.81250 using 118 examples  change =    0.74219
+Ave LogProb at iter 11 = -129384.02344 using 118 examples  change =    0.78906
+Ave LogProb at iter 12 = -129383.92188 using 118 examples  change =    0.10156
+Ave LogProb at iter 13 = -129383.53906 using 118 examples  change =    0.38281
+Ave LogProb at iter 14 = -129383.52344 using 118 examples  change =    0.01562
+Ave LogProb at iter 15 = -129383.53125 using 118 examples  change =   -0.00781
+Ave LogProb at iter 16 = -129383.57031 using 118 examples  change =   -0.03906
+Ave LogProb at iter 17 = -129383.53906 using 118 examples  change =    0.03125
+Ave LogProb at iter 18 = -129383.53906 using 118 examples  change =    0.00000
+Estimation converged at iteration 18
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404520.txt -M model/hmm2 -H model/hmm1/Activity404520 Activity404520 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404520 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+118 Examples loaded, Max length = 123, Min length = 4
+Ave LogProb at iter 1 = -129383.57031 using 118 examples
+Ave LogProb at iter 2 = -129383.50000 using 118 examples  change =    0.07031
+Ave LogProb at iter 3 = -129383.60156 using 118 examples  change =   -0.10156
+Ave LogProb at iter 4 = -129383.52344 using 118 examples  change =    0.07812
+Ave LogProb at iter 5 = -129383.55469 using 118 examples  change =   -0.03125
+Ave LogProb at iter 6 = -129383.62500 using 118 examples  change =   -0.07031
+Ave LogProb at iter 7 = -129383.57031 using 118 examples  change =    0.05469
+Ave LogProb at iter 8 = -129383.57031 using 118 examples  change =    0.00000
+Estimation converged at iteration 8
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404520.txt -M model/hmm3 -H model/hmm2/Activity404520 Activity404520 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404520 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+118 Examples loaded, Max length = 123, Min length = 4
+Ave LogProb at iter 1 = -129383.48438 using 118 examples
+Ave LogProb at iter 2 = -129383.56250 using 118 examples  change =   -0.07812
+Ave LogProb at iter 3 = -129383.56250 using 118 examples  change =    0.00000
+Estimation converged at iteration 3
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_406505.txt -M model/hmm0 model/proto/Activity406505 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity406505 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+83 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-157645.78125
+Iteration 2: Average LogP =-156062.53125  Change =  1583.25000
+Iteration 3: Average LogP =-155466.87500  Change =   595.65625
+Iteration 4: Average LogP =-154928.34375  Change =   538.53125
+Iteration 5: Average LogP =-154301.31250  Change =   627.03125
+Iteration 6: Average LogP =-153830.34375  Change =   470.96875
+Iteration 7: Average LogP =-153486.92188  Change =   343.42188
+Iteration 8: Average LogP =-153310.40625  Change =   176.51562
+Iteration 9: Average LogP =-153234.89062  Change =    75.51562
+Iteration 10: Average LogP =-153173.50000  Change =    61.39062
+Iteration 11: Average LogP =-153137.34375  Change =    36.15625
+Iteration 12: Average LogP =-153111.42188  Change =    25.92188
+Iteration 13: Average LogP =-153096.78125  Change =    14.64062
+Iteration 14: Average LogP =-153082.85938  Change =    13.92188
+Iteration 15: Average LogP =-153035.43750  Change =    47.42188
+Iteration 16: Average LogP =-153020.95312  Change =    14.48438
+Iteration 17: Average LogP =-153007.60938  Change =    13.34375
+Iteration 18: Average LogP =-153006.76562  Change =     0.84375
+Iteration 19: Average LogP =-153006.40625  Change =     0.35938
+Iteration 20: Average LogP =-153006.40625  Change =     0.00000
+Estimation converged at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406505.txt -M model/hmm1 -H model/hmm0/Activity406505 Activity406505 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406505 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+83 Examples loaded, Max length = 45, Min length = 16
+Ave LogProb at iter 1 = -153006.43750 using 83 examples
+Ave LogProb at iter 2 = -153005.96875 using 83 examples  change =    0.46875
+Ave LogProb at iter 3 = -153003.18750 using 83 examples  change =    2.78125
+Ave LogProb at iter 4 = -152998.07812 using 83 examples  change =    5.10938
+Ave LogProb at iter 5 = -152979.87500 using 83 examples  change =   18.20312
+Ave LogProb at iter 6 = -152945.48438 using 83 examples  change =   34.39062
+Ave LogProb at iter 7 = -152917.35938 using 83 examples  change =   28.12500
+Ave LogProb at iter 8 = -152911.48438 using 83 examples  change =    5.87500
+Ave LogProb at iter 9 = -152899.29688 using 83 examples  change =   12.18750
+Ave LogProb at iter 10 = -152884.60938 using 83 examples  change =   14.68750
+Ave LogProb at iter 11 = -152870.68750 using 83 examples  change =   13.92188
+Ave LogProb at iter 12 = -152864.32812 using 83 examples  change =    6.35938
+Ave LogProb at iter 13 = -152863.65625 using 83 examples  change =    0.67188
+Ave LogProb at iter 14 = -152863.21875 using 83 examples  change =    0.43750
+Ave LogProb at iter 15 = -152862.78125 using 83 examples  change =    0.43750
+Ave LogProb at iter 16 = -152862.43750 using 83 examples  change =    0.34375
+Ave LogProb at iter 17 = -152862.39062 using 83 examples  change =    0.04688
+Ave LogProb at iter 18 = -152862.45312 using 83 examples  change =   -0.06250
+Ave LogProb at iter 19 = -152862.45312 using 83 examples  change =    0.00000
+Estimation converged at iteration 19
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406505.txt -M model/hmm2 -H model/hmm1/Activity406505 Activity406505 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406505 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+83 Examples loaded, Max length = 45, Min length = 16
+Ave LogProb at iter 1 = -152862.43750 using 83 examples
+Ave LogProb at iter 2 = -152862.45312 using 83 examples  change =   -0.01562
+Ave LogProb at iter 3 = -152862.40625 using 83 examples  change =    0.04688
+Ave LogProb at iter 4 = -152862.43750 using 83 examples  change =   -0.03125
+Ave LogProb at iter 5 = -152862.45312 using 83 examples  change =   -0.01562
+Ave LogProb at iter 6 = -152862.46875 using 83 examples  change =   -0.01562
+Ave LogProb at iter 7 = -152862.46875 using 83 examples  change =    0.00000
+Estimation converged at iteration 7
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406505.txt -M model/hmm3 -H model/hmm2/Activity406505 Activity406505 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406505 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+83 Examples loaded, Max length = 45, Min length = 16
+Ave LogProb at iter 1 = -152862.45312 using 83 examples
+Ave LogProb at iter 2 = -152862.50000 using 83 examples  change =   -0.04688
+Ave LogProb at iter 3 = -152862.50000 using 83 examples  change =    0.00000
+Estimation converged at iteration 3
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_404505.txt -M model/hmm0 model/proto/Activity404505 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity404505 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+80 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-152904.71875
+Iteration 2: Average LogP =-151212.78125  Change =  1691.93750
+Iteration 3: Average LogP =-150491.59375  Change =   721.18750
+Iteration 4: Average LogP =-149762.18750  Change =   729.40625
+Iteration 5: Average LogP =-149453.04688  Change =   309.14062
+Iteration 6: Average LogP =-149354.03125  Change =    99.01562
+Iteration 7: Average LogP =-149295.32812  Change =    58.70312
+Iteration 8: Average LogP =-149191.32812  Change =   104.00000
+Iteration 9: Average LogP =-149089.09375  Change =   102.23438
+Iteration 10: Average LogP =-149005.45312  Change =    83.64062
+Iteration 11: Average LogP =-148972.51562  Change =    32.93750
+Iteration 12: Average LogP =-148956.50000  Change =    16.01562
+Iteration 13: Average LogP =-148950.09375  Change =     6.40625
+Iteration 14: Average LogP =-148947.81250  Change =     2.28125
+Iteration 15: Average LogP =-148947.21875  Change =     0.59375
+Iteration 16: Average LogP =-148944.00000  Change =     3.21875
+Iteration 17: Average LogP =-148930.21875  Change =    13.78125
+Iteration 18: Average LogP =-148911.34375  Change =    18.87500
+Iteration 19: Average LogP =-148837.92188  Change =    73.42188
+Iteration 20: Average LogP =-148775.59375  Change =    62.32812
+Estimation aborted at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404505.txt -M model/hmm1 -H model/hmm0/Activity404505 Activity404505 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404505 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+80 Examples loaded, Max length = 43, Min length = 14
+Ave LogProb at iter 1 = -148764.12500 using 80 examples
+Ave LogProb at iter 2 = -148717.42188 using 80 examples  change =   46.70312
+Ave LogProb at iter 3 = -148706.87500 using 80 examples  change =   10.54688
+Ave LogProb at iter 4 = -148696.29688 using 80 examples  change =   10.57812
+Ave LogProb at iter 5 = -148685.90625 using 80 examples  change =   10.39062
+Ave LogProb at iter 6 = -148673.57812 using 80 examples  change =   12.32812
+Ave LogProb at iter 7 = -148655.79688 using 80 examples  change =   17.78125
+Ave LogProb at iter 8 = -148650.18750 using 80 examples  change =    5.60938
+Ave LogProb at iter 9 = -148645.04688 using 80 examples  change =    5.14062
+Ave LogProb at iter 10 = -148636.65625 using 80 examples  change =    8.39062
+Ave LogProb at iter 11 = -148627.59375 using 80 examples  change =    9.06250
+Ave LogProb at iter 12 = -148625.03125 using 80 examples  change =    2.56250
+Ave LogProb at iter 13 = -148624.79688 using 80 examples  change =    0.23438
+Ave LogProb at iter 14 = -148623.65625 using 80 examples  change =    1.14062
+Ave LogProb at iter 15 = -148622.90625 using 80 examples  change =    0.75000
+Ave LogProb at iter 16 = -148622.23438 using 80 examples  change =    0.67188
+Ave LogProb at iter 17 = -148622.28125 using 80 examples  change =   -0.04688
+Ave LogProb at iter 18 = -148622.21875 using 80 examples  change =    0.06250
+Ave LogProb at iter 19 = -148622.09375 using 80 examples  change =    0.12500
+Ave LogProb at iter 20 = -148621.75000 using 80 examples  change =    0.34375
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404505.txt -M model/hmm2 -H model/hmm1/Activity404505 Activity404505 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404505 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+80 Examples loaded, Max length = 43, Min length = 14
+Ave LogProb at iter 1 = -148621.73438 using 80 examples
+Ave LogProb at iter 2 = -148621.71875 using 80 examples  change =    0.01562
+Ave LogProb at iter 3 = -148621.73438 using 80 examples  change =   -0.01562
+Ave LogProb at iter 4 = -148621.71875 using 80 examples  change =    0.01562
+Ave LogProb at iter 5 = -148621.71875 using 80 examples  change =    0.00000
+Estimation converged at iteration 5
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404505.txt -M model/hmm3 -H model/hmm2/Activity404505 Activity404505 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404505 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+80 Examples loaded, Max length = 43, Min length = 14
+Ave LogProb at iter 1 = -148621.71875 using 80 examples
+Ave LogProb at iter 2 = -148621.76562 using 80 examples  change =   -0.04688
+Ave LogProb at iter 3 = -148621.71875 using 80 examples  change =    0.04688
+Ave LogProb at iter 4 = -148621.75000 using 80 examples  change =   -0.03125
+Ave LogProb at iter 5 = -148621.71875 using 80 examples  change =    0.03125
+Ave LogProb at iter 6 = -148621.73438 using 80 examples  change =   -0.01562
+Ave LogProb at iter 7 = -148621.73438 using 80 examples  change =    0.00000
+Estimation converged at iteration 7
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_406519.txt -M model/hmm0 model/proto/Activity406519 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity406519 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+85 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-103456.11719
+Iteration 2: Average LogP =-100813.18750  Change =  2642.92969
+Iteration 3: Average LogP =-99976.14062  Change =   837.04688
+Iteration 4: Average LogP =-99640.63281  Change =   335.50781
+Iteration 5: Average LogP =-99413.67188  Change =   226.96094
+Iteration 6: Average LogP =-99327.13281  Change =    86.53906
+Iteration 7: Average LogP =-99260.89062  Change =    66.24219
+Iteration 8: Average LogP =-99182.74219  Change =    78.14844
+Iteration 9: Average LogP =-99143.70312  Change =    39.03906
+Iteration 10: Average LogP =-99129.69531  Change =    14.00781
+Iteration 11: Average LogP =-99121.89062  Change =     7.80469
+Iteration 12: Average LogP =-99111.32812  Change =    10.56250
+Iteration 13: Average LogP =-99099.97656  Change =    11.35156
+Iteration 14: Average LogP =-99074.25000  Change =    25.72656
+Iteration 15: Average LogP =-99055.50781  Change =    18.74219
+Iteration 16: Average LogP =-99048.67969  Change =     6.82812
+Iteration 17: Average LogP =-99045.25781  Change =     3.42188
+Iteration 18: Average LogP =-99040.44531  Change =     4.81250
+Iteration 19: Average LogP =-99034.28125  Change =     6.16406
+Iteration 20: Average LogP =-99031.88281  Change =     2.39844
+Estimation aborted at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406519.txt -M model/hmm1 -H model/hmm0/Activity406519 Activity406519 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406519 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+85 Examples loaded, Max length = 31, Min length = 6
+Ave LogProb at iter 1 = -99029.35156 using 85 examples
+Ave LogProb at iter 2 = -98966.75000 using 85 examples  change =   62.60156
+Ave LogProb at iter 3 = -98962.67969 using 85 examples  change =    4.07031
+Ave LogProb at iter 4 = -98957.91406 using 85 examples  change =    4.76562
+Ave LogProb at iter 5 = -98956.51562 using 85 examples  change =    1.39844
+Ave LogProb at iter 6 = -98953.09375 using 85 examples  change =    3.42188
+Ave LogProb at iter 7 = -98949.25781 using 85 examples  change =    3.83594
+Ave LogProb at iter 8 = -98945.25000 using 85 examples  change =    4.00781
+Ave LogProb at iter 9 = -98943.69531 using 85 examples  change =    1.55469
+Ave LogProb at iter 10 = -98941.60156 using 85 examples  change =    2.09375
+Ave LogProb at iter 11 = -98941.41406 using 85 examples  change =    0.18750
+Ave LogProb at iter 12 = -98941.20312 using 85 examples  change =    0.21094
+Ave LogProb at iter 13 = -98941.21094 using 85 examples  change =   -0.00781
+Ave LogProb at iter 14 = -98941.22656 using 85 examples  change =   -0.01562
+Ave LogProb at iter 15 = -98941.15625 using 85 examples  change =    0.07031
+Ave LogProb at iter 16 = -98941.21094 using 85 examples  change =   -0.05469
+Ave LogProb at iter 17 = -98941.17969 using 85 examples  change =    0.03125
+Ave LogProb at iter 18 = -98941.20312 using 85 examples  change =   -0.02344
+Ave LogProb at iter 19 = -98941.17969 using 85 examples  change =    0.02344
+Ave LogProb at iter 20 = -98941.18750 using 85 examples  change =   -0.00781
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406519.txt -M model/hmm2 -H model/hmm1/Activity406519 Activity406519 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406519 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+85 Examples loaded, Max length = 31, Min length = 6
+Ave LogProb at iter 1 = -98941.18750 using 85 examples
+Ave LogProb at iter 2 = -98941.20312 using 85 examples  change =   -0.01562
+Ave LogProb at iter 3 = -98941.18750 using 85 examples  change =    0.01562
+Ave LogProb at iter 4 = -98941.17969 using 85 examples  change =    0.00781
+Ave LogProb at iter 5 = -98941.18750 using 85 examples  change =   -0.00781
+Ave LogProb at iter 6 = -98941.20312 using 85 examples  change =   -0.01562
+Ave LogProb at iter 7 = -98941.17969 using 85 examples  change =    0.02344
+Ave LogProb at iter 8 = -98941.17969 using 85 examples  change =    0.00000
+Estimation converged at iteration 8
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406519.txt -M model/hmm3 -H model/hmm2/Activity406519 Activity406519 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406519 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+85 Examples loaded, Max length = 31, Min length = 6
+Ave LogProb at iter 1 = -98941.17969 using 85 examples
+Ave LogProb at iter 2 = -98941.17969 using 85 examples  change =    0.00000
+Estimation converged at iteration 2
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_404519.txt -M model/hmm0 model/proto/Activity404519 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity404519 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+85 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-88594.46094
+Iteration 2: Average LogP =-87051.03125  Change =  1543.42969
+Iteration 3: Average LogP =-86516.21875  Change =   534.81250
+Iteration 4: Average LogP =-86271.37500  Change =   244.84375
+Iteration 5: Average LogP =-86061.08594  Change =   210.28906
+Iteration 6: Average LogP =-85905.53906  Change =   155.54688
+Iteration 7: Average LogP =-85769.96094  Change =   135.57812
+Iteration 8: Average LogP =-85683.97656  Change =    85.98438
+Iteration 9: Average LogP =-85515.67188  Change =   168.30469
+Iteration 10: Average LogP =-85435.79688  Change =    79.87500
+Iteration 11: Average LogP =-85353.60938  Change =    82.18750
+Iteration 12: Average LogP =-85203.82031  Change =   149.78906
+Iteration 13: Average LogP =-85004.77344  Change =   199.04688
+Iteration 14: Average LogP =-84944.26562  Change =    60.50781
+Iteration 15: Average LogP =-84884.42969  Change =    59.83594
+Iteration 16: Average LogP =-84805.92969  Change =    78.50000
+Iteration 17: Average LogP =-84625.38281  Change =   180.54688
+Iteration 18: Average LogP =-84584.62500  Change =    40.75781
+Iteration 19: Average LogP =-84579.02344  Change =     5.60156
+Iteration 20: Average LogP =-84576.31250  Change =     2.71094
+Estimation aborted at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404519.txt -M model/hmm1 -H model/hmm0/Activity404519 Activity404519 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404519 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+85 Examples loaded, Max length = 38, Min length = 6
+Ave LogProb at iter 1 = -84573.57031 using 85 examples
+Ave LogProb at iter 2 = -84495.26562 using 85 examples  change =   78.30469
+Ave LogProb at iter 3 = -84490.14062 using 85 examples  change =    5.12500
+Ave LogProb at iter 4 = -84473.02344 using 85 examples  change =   17.11719
+Ave LogProb at iter 5 = -84471.79688 using 85 examples  change =    1.22656
+Ave LogProb at iter 6 = -84471.65625 using 85 examples  change =    0.14062
+Ave LogProb at iter 7 = -84471.65625 using 85 examples  change =    0.00000
+Estimation converged at iteration 7
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404519.txt -M model/hmm2 -H model/hmm1/Activity404519 Activity404519 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404519 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+85 Examples loaded, Max length = 38, Min length = 6
+Ave LogProb at iter 1 = -84471.32031 using 85 examples
+Ave LogProb at iter 2 = -84469.75781 using 85 examples  change =    1.56250
+Ave LogProb at iter 3 = -84466.33594 using 85 examples  change =    3.42188
+Ave LogProb at iter 4 = -84453.34375 using 85 examples  change =   12.99219
+Ave LogProb at iter 5 = -84402.96094 using 85 examples  change =   50.38281
+Ave LogProb at iter 6 = -84396.97656 using 85 examples  change =    5.98438
+Ave LogProb at iter 7 = -84396.28125 using 85 examples  change =    0.69531
+Ave LogProb at iter 8 = -84396.10938 using 85 examples  change =    0.17188
+Ave LogProb at iter 9 = -84396.08594 using 85 examples  change =    0.02344
+Ave LogProb at iter 10 = -84396.08594 using 85 examples  change =    0.00000
+Estimation converged at iteration 10
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404519.txt -M model/hmm3 -H model/hmm2/Activity404519 Activity404519 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404519 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+85 Examples loaded, Max length = 38, Min length = 6
+Ave LogProb at iter 1 = -84396.09375 using 85 examples
+Ave LogProb at iter 2 = -84396.13281 using 85 examples  change =   -0.03906
+Ave LogProb at iter 3 = -84396.08594 using 85 examples  change =    0.04688
+Ave LogProb at iter 4 = -84396.10156 using 85 examples  change =   -0.01562
+Ave LogProb at iter 5 = -84396.13281 using 85 examples  change =   -0.03125
+Ave LogProb at iter 6 = -84396.10938 using 85 examples  change =    0.02344
+Ave LogProb at iter 7 = -84396.10938 using 85 examples  change =    0.00000
+Estimation converged at iteration 7
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_406511.txt -M model/hmm0 model/proto/Activity406511 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity406511 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+79 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-103752.14062
+Iteration 2: Average LogP =-100468.82031  Change =  3283.32031
+Iteration 3: Average LogP =-99340.34375  Change =  1128.47656
+Iteration 4: Average LogP =-98794.86719  Change =   545.47656
+Iteration 5: Average LogP =-98504.64844  Change =   290.21875
+Iteration 6: Average LogP =-98277.54688  Change =   227.10156
+Iteration 7: Average LogP =-98171.67188  Change =   105.87500
+Iteration 8: Average LogP =-98072.00781  Change =    99.66406
+Iteration 9: Average LogP =-97939.25000  Change =   132.75781
+Iteration 10: Average LogP =-97656.42969  Change =   282.82031
+Iteration 11: Average LogP =-97510.18750  Change =   146.24219
+Iteration 12: Average LogP =-97444.58594  Change =    65.60156
+Iteration 13: Average LogP =-97341.34375  Change =   103.24219
+Iteration 14: Average LogP =-97221.17188  Change =   120.17188
+Iteration 15: Average LogP =-97088.23438  Change =   132.93750
+Iteration 16: Average LogP =-96852.48438  Change =   235.75000
+Iteration 17: Average LogP =-96844.39062  Change =     8.09375
+Iteration 18: Average LogP =-96839.25781  Change =     5.13281
+Iteration 19: Average LogP =-96838.85156  Change =     0.40625
+Iteration 20: Average LogP =-96838.66406  Change =     0.18750
+Estimation aborted at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406511.txt -M model/hmm1 -H model/hmm0/Activity406511 Activity406511 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406511 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+79 Examples loaded, Max length = 37, Min length = 7
+Ave LogProb at iter 1 = -96838.32031 using 79 examples
+Ave LogProb at iter 2 = -96754.25781 using 79 examples  change =   84.06250
+Ave LogProb at iter 3 = -96754.23438 using 79 examples  change =    0.02344
+Ave LogProb at iter 4 = -96754.10938 using 79 examples  change =    0.12500
+Ave LogProb at iter 5 = -96754.09375 using 79 examples  change =    0.01562
+Ave LogProb at iter 6 = -96754.14062 using 79 examples  change =   -0.04688
+Ave LogProb at iter 7 = -96754.10156 using 79 examples  change =    0.03906
+Ave LogProb at iter 8 = -96754.10938 using 79 examples  change =   -0.00781
+Ave LogProb at iter 9 = -96754.10938 using 79 examples  change =    0.00000
+Estimation converged at iteration 9
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406511.txt -M model/hmm2 -H model/hmm1/Activity406511 Activity406511 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406511 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+79 Examples loaded, Max length = 37, Min length = 7
+Ave LogProb at iter 1 = -96754.10156 using 79 examples
+Ave LogProb at iter 2 = -96754.09375 using 79 examples  change =    0.00781
+Ave LogProb at iter 3 = -96754.10938 using 79 examples  change =   -0.01562
+Ave LogProb at iter 4 = -96754.10156 using 79 examples  change =    0.00781
+Ave LogProb at iter 5 = -96754.08594 using 79 examples  change =    0.01562
+Ave LogProb at iter 6 = -96754.10938 using 79 examples  change =   -0.02344
+Ave LogProb at iter 7 = -96754.08594 using 79 examples  change =    0.02344
+Ave LogProb at iter 8 = -96754.08594 using 79 examples  change =    0.00000
+Estimation converged at iteration 8
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406511.txt -M model/hmm3 -H model/hmm2/Activity406511 Activity406511 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406511 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+79 Examples loaded, Max length = 37, Min length = 7
+Ave LogProb at iter 1 = -96754.10938 using 79 examples
+Ave LogProb at iter 2 = -96754.12500 using 79 examples  change =   -0.01562
+Ave LogProb at iter 3 = -96754.11719 using 79 examples  change =    0.00781
+Ave LogProb at iter 4 = -96754.10156 using 79 examples  change =    0.01562
+Ave LogProb at iter 5 = -96754.14844 using 79 examples  change =   -0.04688
+Ave LogProb at iter 6 = -96754.12500 using 79 examples  change =    0.02344
+Ave LogProb at iter 7 = -96754.12500 using 79 examples  change =    0.00000
+Estimation converged at iteration 7
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_404511.txt -M model/hmm0 model/proto/Activity404511 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity404511 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+78 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-88803.23438
+Iteration 2: Average LogP =-87464.93750  Change =  1338.29688
+Iteration 3: Average LogP =-86565.43750  Change =   899.50000
+Iteration 4: Average LogP =-85979.37500  Change =   586.06250
+Iteration 5: Average LogP =-85803.85938  Change =   175.51562
+Iteration 6: Average LogP =-85724.33594  Change =    79.52344
+Iteration 7: Average LogP =-85591.00781  Change =   133.32812
+Iteration 8: Average LogP =-85513.07812  Change =    77.92969
+Iteration 9: Average LogP =-85462.19531  Change =    50.88281
+Iteration 10: Average LogP =-85430.55469  Change =    31.64062
+Iteration 11: Average LogP =-85406.95312  Change =    23.60156
+Iteration 12: Average LogP =-85376.75781  Change =    30.19531
+Iteration 13: Average LogP =-85325.85938  Change =    50.89844
+Iteration 14: Average LogP =-85303.44531  Change =    22.41406
+Iteration 15: Average LogP =-85274.79688  Change =    28.64844
+Iteration 16: Average LogP =-85242.19531  Change =    32.60156
+Iteration 17: Average LogP =-85230.13281  Change =    12.06250
+Iteration 18: Average LogP =-85229.92969  Change =     0.20312
+Iteration 19: Average LogP =-85229.92969  Change =     0.00000
+Estimation converged at iteration 20
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404511.txt -M model/hmm1 -H model/hmm0/Activity404511 Activity404511 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404511 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+78 Examples loaded, Max length = 28, Min length = 6
+Ave LogProb at iter 1 = -85229.93750 using 78 examples
+Ave LogProb at iter 2 = -85164.44531 using 78 examples  change =   65.49219
+Ave LogProb at iter 3 = -85164.42969 using 78 examples  change =    0.01562
+Ave LogProb at iter 4 = -85164.42969 using 78 examples  change =    0.00000
+Estimation converged at iteration 4
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404511.txt -M model/hmm2 -H model/hmm1/Activity404511 Activity404511 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404511 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+78 Examples loaded, Max length = 28, Min length = 6
+Ave LogProb at iter 1 = -85164.41406 using 78 examples
+Ave LogProb at iter 2 = -85164.44531 using 78 examples  change =   -0.03125
+Ave LogProb at iter 3 = -85164.41406 using 78 examples  change =    0.03125
+Ave LogProb at iter 4 = -85164.47656 using 78 examples  change =   -0.06250
+Ave LogProb at iter 5 = -85164.42188 using 78 examples  change =    0.05469
+Ave LogProb at iter 6 = -85164.43750 using 78 examples  change =   -0.01562
+Ave LogProb at iter 7 = -85164.42188 using 78 examples  change =    0.01562
+Ave LogProb at iter 8 = -85164.44531 using 78 examples  change =   -0.02344
+Ave LogProb at iter 9 = -85164.43750 using 78 examples  change =    0.00781
+Ave LogProb at iter 10 = -85164.43750 using 78 examples  change =    0.00000
+Estimation converged at iteration 10
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404511.txt -M model/hmm3 -H model/hmm2/Activity404511 Activity404511 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404511 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+78 Examples loaded, Max length = 28, Min length = 6
+Ave LogProb at iter 1 = -85164.46094 using 78 examples
+Ave LogProb at iter 2 = -85164.44531 using 78 examples  change =    0.01562
+Ave LogProb at iter 3 = -85164.42969 using 78 examples  change =    0.01562
+Ave LogProb at iter 4 = -85164.41406 using 78 examples  change =    0.01562
+Ave LogProb at iter 5 = -85164.42969 using 78 examples  change =   -0.01562
+Ave LogProb at iter 6 = -85164.44531 using 78 examples  change =   -0.01562
+Ave LogProb at iter 7 = -85164.44531 using 78 examples  change =    0.00000
+Estimation converged at iteration 7
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_406508.txt -M model/hmm0 model/proto/Activity406508 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity406508 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+84 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-119965.46094
+Iteration 2: Average LogP =-117704.22656  Change =  2261.23438
+Iteration 3: Average LogP =-116752.53906  Change =   951.68750
+Iteration 4: Average LogP =-116361.40625  Change =   391.13281
+Iteration 5: Average LogP =-116126.36719  Change =   235.03906
+Iteration 6: Average LogP =-115885.32031  Change =   241.04688
+Iteration 7: Average LogP =-115672.23438  Change =   213.08594
+Iteration 8: Average LogP =-115573.34375  Change =    98.89062
+Iteration 9: Average LogP =-115447.39062  Change =   125.95312
+Iteration 10: Average LogP =-115309.26562  Change =   138.12500
+Iteration 11: Average LogP =-115222.85938  Change =    86.40625
+Iteration 12: Average LogP =-115067.20312  Change =   155.65625
+Iteration 13: Average LogP =-114793.64062  Change =   273.56250
+Iteration 14: Average LogP =-114741.02344  Change =    52.61719
+Iteration 15: Average LogP =-114721.92969  Change =    19.09375
+Iteration 16: Average LogP =-114721.25000  Change =     0.67969
+Iteration 17: Average LogP =-114721.25000  Change =     0.00000
+Estimation converged at iteration 18
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406508.txt -M model/hmm1 -H model/hmm0/Activity406508 Activity406508 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406508 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+84 Examples loaded, Max length = 38, Min length = 11
+Ave LogProb at iter 1 = -114721.25000 using 84 examples
+Ave LogProb at iter 2 = -114650.59375 using 84 examples  change =   70.65625
+Ave LogProb at iter 3 = -114650.56250 using 84 examples  change =    0.03125
+Ave LogProb at iter 4 = -114650.57031 using 84 examples  change =   -0.00781
+Ave LogProb at iter 5 = -114650.56250 using 84 examples  change =    0.00781
+Ave LogProb at iter 6 = -114650.58594 using 84 examples  change =   -0.02344
+Ave LogProb at iter 7 = -114650.58594 using 84 examples  change =    0.00000
+Estimation converged at iteration 7
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406508.txt -M model/hmm2 -H model/hmm1/Activity406508 Activity406508 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406508 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+84 Examples loaded, Max length = 38, Min length = 11
+Ave LogProb at iter 1 = -114650.59375 using 84 examples
+Ave LogProb at iter 2 = -114650.59375 using 84 examples  change =    0.00000
+Estimation converged at iteration 2
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_406508.txt -M model/hmm3 -H model/hmm2/Activity406508 Activity406508 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity406508 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+84 Examples loaded, Max length = 38, Min length = 11
+Ave LogProb at iter 1 = -114650.56250 using 84 examples
+Ave LogProb at iter 2 = -114650.52344 using 84 examples  change =    0.03906
+Ave LogProb at iter 3 = -114650.54688 using 84 examples  change =   -0.02344
+Ave LogProb at iter 4 = -114650.53906 using 84 examples  change =    0.00781
+Ave LogProb at iter 5 = -114650.53906 using 84 examples  change =    0.00000
+Estimation converged at iteration 5
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_404508.txt -M model/hmm0 model/proto/Activity404508 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity404508 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+85 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-123681.56250
+Iteration 2: Average LogP =-121544.63281  Change =  2136.92969
+Iteration 3: Average LogP =-120829.04688  Change =   715.58594
+Iteration 4: Average LogP =-120438.29688  Change =   390.75000
+Iteration 5: Average LogP =-120188.69531  Change =   249.60156
+Iteration 6: Average LogP =-119956.62500  Change =   232.07031
+Iteration 7: Average LogP =-119750.20312  Change =   206.42188
+Iteration 8: Average LogP =-119723.06250  Change =    27.14062
+Iteration 9: Average LogP =-119712.76562  Change =    10.29688
+Iteration 10: Average LogP =-119694.63281  Change =    18.13281
+Iteration 11: Average LogP =-119683.10938  Change =    11.52344
+Iteration 12: Average LogP =-119672.15625  Change =    10.95312
+Iteration 13: Average LogP =-119635.71875  Change =    36.43750
+Iteration 14: Average LogP =-119629.55469  Change =     6.16406
+Iteration 15: Average LogP =-119626.96094  Change =     2.59375
+Iteration 16: Average LogP =-119622.50781  Change =     4.45312
+Iteration 17: Average LogP =-119618.16406  Change =     4.34375
+Iteration 18: Average LogP =-119616.70312  Change =     1.46094
+Iteration 19: Average LogP =-119616.70312  Change =     0.00000
+Estimation converged at iteration 20
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404508.txt -M model/hmm1 -H model/hmm0/Activity404508 Activity404508 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404508 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+85 Examples loaded, Max length = 61, Min length = 9
+Ave LogProb at iter 1 = -119616.70312 using 85 examples
+Ave LogProb at iter 2 = -119611.23438 using 85 examples  change =    5.46875
+Ave LogProb at iter 3 = -119611.02344 using 85 examples  change =    0.21094
+Ave LogProb at iter 4 = -119609.58594 using 85 examples  change =    1.43750
+Ave LogProb at iter 5 = -119603.58594 using 85 examples  change =    6.00000
+Ave LogProb at iter 6 = -119600.85938 using 85 examples  change =    2.72656
+Ave LogProb at iter 7 = -119598.56250 using 85 examples  change =    2.29688
+Ave LogProb at iter 8 = -119598.30469 using 85 examples  change =    0.25781
+Ave LogProb at iter 9 = -119598.17969 using 85 examples  change =    0.12500
+Ave LogProb at iter 10 = -119597.56250 using 85 examples  change =    0.61719
+Ave LogProb at iter 11 = -119593.56250 using 85 examples  change =    4.00000
+Ave LogProb at iter 12 = -119580.51562 using 85 examples  change =   13.04688
+Ave LogProb at iter 13 = -119574.86719 using 85 examples  change =    5.64844
+Ave LogProb at iter 14 = -119560.20312 using 85 examples  change =   14.66406
+Ave LogProb at iter 15 = -119512.75000 using 85 examples  change =   47.45312
+Ave LogProb at iter 16 = -119467.96094 using 85 examples  change =   44.78906
+Ave LogProb at iter 17 = -119428.64844 using 85 examples  change =   39.31250
+Ave LogProb at iter 18 = -119388.71875 using 85 examples  change =   39.92969
+Ave LogProb at iter 19 = -119316.43750 using 85 examples  change =   72.28125
+Ave LogProb at iter 20 = -119136.10938 using 85 examples  change =  180.32812
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404508.txt -M model/hmm2 -H model/hmm1/Activity404508 Activity404508 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404508 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+85 Examples loaded, Max length = 61, Min length = 9
+Ave LogProb at iter 1 = -119044.03906 using 85 examples
+Ave LogProb at iter 2 = -119013.77344 using 85 examples  change =   30.26562
+Ave LogProb at iter 3 = -118983.30469 using 85 examples  change =   30.46875
+Ave LogProb at iter 4 = -118966.86719 using 85 examples  change =   16.43750
+Ave LogProb at iter 5 = -118964.30469 using 85 examples  change =    2.56250
+Ave LogProb at iter 6 = -118962.91406 using 85 examples  change =    1.39062
+Ave LogProb at iter 7 = -118960.62500 using 85 examples  change =    2.28906
+Ave LogProb at iter 8 = -118958.16406 using 85 examples  change =    2.46094
+Ave LogProb at iter 9 = -118958.17969 using 85 examples  change =   -0.01562
+Ave LogProb at iter 10 = -118958.16406 using 85 examples  change =    0.01562
+Ave LogProb at iter 11 = -118958.13281 using 85 examples  change =    0.03125
+Ave LogProb at iter 12 = -118958.09375 using 85 examples  change =    0.03906
+Ave LogProb at iter 13 = -118958.15625 using 85 examples  change =   -0.06250
+Ave LogProb at iter 14 = -118958.13281 using 85 examples  change =    0.02344
+Ave LogProb at iter 15 = -118958.15625 using 85 examples  change =   -0.02344
+Ave LogProb at iter 16 = -118958.11719 using 85 examples  change =    0.03906
+Ave LogProb at iter 17 = -118958.18750 using 85 examples  change =   -0.07031
+Ave LogProb at iter 18 = -118958.10938 using 85 examples  change =    0.07812
+Ave LogProb at iter 19 = -118958.14062 using 85 examples  change =   -0.03125
+Ave LogProb at iter 20 = -118958.14062 using 85 examples  change =    0.00000
+Estimation converged at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_404508.txt -M model/hmm3 -H model/hmm2/Activity404508 Activity404508 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity404508 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+85 Examples loaded, Max length = 61, Min length = 9
+Ave LogProb at iter 1 = -118958.13281 using 85 examples
+Ave LogProb at iter 2 = -118958.13281 using 85 examples  change =    0.00000
+Estimation converged at iteration 2
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_408512.txt -M model/hmm0 model/proto/Activity408512 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity408512 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+67 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-250911.60938
+Iteration 2: Average LogP =-243417.93750  Change =  7493.67188
+Iteration 3: Average LogP =-241802.01562  Change =  1615.92188
+Iteration 4: Average LogP =-240813.29688  Change =   988.71875
+Iteration 5: Average LogP =-240158.79688  Change =   654.50000
+Iteration 6: Average LogP =-239814.67188  Change =   344.12500
+Iteration 7: Average LogP =-239530.17188  Change =   284.50000
+Iteration 8: Average LogP =-239304.20312  Change =   225.96875
+Iteration 9: Average LogP =-239239.18750  Change =    65.01562
+Iteration 10: Average LogP =-239182.18750  Change =    57.00000
+Iteration 11: Average LogP =-239146.34375  Change =    35.84375
+Iteration 12: Average LogP =-239122.56250  Change =    23.78125
+Iteration 13: Average LogP =-239101.17188  Change =    21.39062
+Iteration 14: Average LogP =-239081.62500  Change =    19.54688
+Iteration 15: Average LogP =-239071.62500  Change =    10.00000
+Iteration 16: Average LogP =-239071.62500  Change =     0.00000
+Estimation converged at iteration 17
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_408512.txt -M model/hmm1 -H model/hmm0/Activity408512 Activity408512 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity408512 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+67 Examples loaded, Max length = 136, Min length = 6
+Ave LogProb at iter 1 = -239071.62500 using 67 examples
+Ave LogProb at iter 2 = -239071.70312 using 67 examples  change =   -0.07812
+Ave LogProb at iter 3 = -239071.67188 using 67 examples  change =    0.03125
+Ave LogProb at iter 4 = -239071.45312 using 67 examples  change =    0.21875
+Ave LogProb at iter 5 = -239071.32812 using 67 examples  change =    0.12500
+Ave LogProb at iter 6 = -239071.20312 using 67 examples  change =    0.12500
+Ave LogProb at iter 7 = -239071.29688 using 67 examples  change =   -0.09375
+Ave LogProb at iter 8 = -239071.32812 using 67 examples  change =   -0.03125
+Ave LogProb at iter 9 = -239071.17188 using 67 examples  change =    0.15625
+Ave LogProb at iter 10 = -239071.26562 using 67 examples  change =   -0.09375
+Ave LogProb at iter 11 = -239071.25000 using 67 examples  change =    0.01562
+Ave LogProb at iter 12 = -239071.29688 using 67 examples  change =   -0.04688
+Ave LogProb at iter 13 = -239071.29688 using 67 examples  change =    0.00000
+Estimation converged at iteration 13
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_408512.txt -M model/hmm2 -H model/hmm1/Activity408512 Activity408512 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity408512 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+67 Examples loaded, Max length = 136, Min length = 6
+Ave LogProb at iter 1 = -239071.31250 using 67 examples
+Ave LogProb at iter 2 = -239071.39062 using 67 examples  change =   -0.07812
+Ave LogProb at iter 3 = -239071.32812 using 67 examples  change =    0.06250
+Ave LogProb at iter 4 = -239071.25000 using 67 examples  change =    0.07812
+Ave LogProb at iter 5 = -239071.26562 using 67 examples  change =   -0.01562
+Ave LogProb at iter 6 = -239071.29688 using 67 examples  change =   -0.03125
+Ave LogProb at iter 7 = -239071.37500 using 67 examples  change =   -0.07812
+Ave LogProb at iter 8 = -239071.21875 using 67 examples  change =    0.15625
+Ave LogProb at iter 9 = -239071.34375 using 67 examples  change =   -0.12500
+Ave LogProb at iter 10 = -239071.31250 using 67 examples  change =    0.03125
+Ave LogProb at iter 11 = -239071.29688 using 67 examples  change =    0.01562
+Ave LogProb at iter 12 = -239071.25000 using 67 examples  change =    0.04688
+Ave LogProb at iter 13 = -239071.31250 using 67 examples  change =   -0.06250
+Ave LogProb at iter 14 = -239071.17188 using 67 examples  change =    0.14062
+Ave LogProb at iter 15 = -239071.28125 using 67 examples  change =   -0.10938
+Ave LogProb at iter 16 = -239071.26562 using 67 examples  change =    0.01562
+Ave LogProb at iter 17 = -239071.28125 using 67 examples  change =   -0.01562
+Ave LogProb at iter 18 = -239071.23438 using 67 examples  change =    0.04688
+Ave LogProb at iter 19 = -239071.17188 using 67 examples  change =    0.06250
+Ave LogProb at iter 20 = -239071.26562 using 67 examples  change =   -0.09375
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_408512.txt -M model/hmm3 -H model/hmm2/Activity408512 Activity408512 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity408512 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+67 Examples loaded, Max length = 136, Min length = 6
+Ave LogProb at iter 1 = -239071.35938 using 67 examples
+Ave LogProb at iter 2 = -239071.17188 using 67 examples  change =    0.18750
+Ave LogProb at iter 3 = -239071.21875 using 67 examples  change =   -0.04688
+Ave LogProb at iter 4 = -239071.31250 using 67 examples  change =   -0.09375
+Ave LogProb at iter 5 = -239071.20312 using 67 examples  change =    0.10938
+Ave LogProb at iter 6 = -239071.26562 using 67 examples  change =   -0.06250
+Ave LogProb at iter 7 = -239071.18750 using 67 examples  change =    0.07812
+Ave LogProb at iter 8 = -239071.31250 using 67 examples  change =   -0.12500
+Ave LogProb at iter 9 = -239071.23438 using 67 examples  change =    0.07812
+Ave LogProb at iter 10 = -239071.35938 using 67 examples  change =   -0.12500
+Ave LogProb at iter 11 = -239071.23438 using 67 examples  change =    0.12500
+Ave LogProb at iter 12 = -239071.23438 using 67 examples  change =    0.00000
+Estimation converged at iteration 12
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_407521.txt -M model/hmm0 model/proto/Activity407521 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity407521 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+171 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-341287.50000
+Iteration 2: Average LogP =-328204.65625  Change = 13082.84375
+Iteration 3: Average LogP =-325987.78125  Change =  2216.87500
+Iteration 4: Average LogP =-324804.59375  Change =  1183.18750
+Iteration 5: Average LogP =-323699.84375  Change =  1104.75000
+Iteration 6: Average LogP =-322405.90625  Change =  1293.93750
+Iteration 7: Average LogP =-321695.93750  Change =   709.96875
+Iteration 8: Average LogP =-320743.96875  Change =   951.96875
+Iteration 9: Average LogP =-319897.31250  Change =   846.65625
+Iteration 10: Average LogP =-318892.68750  Change =  1004.62500
+Iteration 11: Average LogP =-317798.00000  Change =  1094.68750
+Iteration 12: Average LogP =-317484.75000  Change =   313.25000
+Iteration 13: Average LogP =-317267.93750  Change =   216.81250
+Iteration 14: Average LogP =-317058.65625  Change =   209.28125
+Iteration 15: Average LogP =-316853.84375  Change =   204.81250
+Iteration 16: Average LogP =-316655.43750  Change =   198.40625
+Iteration 17: Average LogP =-316259.93750  Change =   395.50000
+Iteration 18: Average LogP =-315528.09375  Change =   731.84375
+Iteration 19: Average LogP =-315241.03125  Change =   287.06250
+Iteration 20: Average LogP =-315017.53125  Change =   223.50000
+Estimation aborted at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_407521.txt -M model/hmm1 -H model/hmm0/Activity407521 Activity407521 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity407521 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+171 Examples loaded, Max length = 163, Min length = 7
+Ave LogProb at iter 1 = -314826.18750 using 171 examples
+Ave LogProb at iter 2 = -314602.00000 using 171 examples  change =  224.18750
+Ave LogProb at iter 3 = -314473.43750 using 171 examples  change =  128.56250
+Ave LogProb at iter 4 = -314409.46875 using 171 examples  change =   63.96875
+Ave LogProb at iter 5 = -314345.25000 using 171 examples  change =   64.21875
+Ave LogProb at iter 6 = -314270.03125 using 171 examples  change =   75.21875
+Ave LogProb at iter 7 = -314141.09375 using 171 examples  change =  128.93750
+Ave LogProb at iter 8 = -314063.68750 using 171 examples  change =   77.40625
+Ave LogProb at iter 9 = -313989.43750 using 171 examples  change =   74.25000
+Ave LogProb at iter 10 = -313911.40625 using 171 examples  change =   78.03125
+Ave LogProb at iter 11 = -313791.31250 using 171 examples  change =  120.09375
+Ave LogProb at iter 12 = -313702.87500 using 171 examples  change =   88.43750
+Ave LogProb at iter 13 = -313634.00000 using 171 examples  change =   68.87500
+Ave LogProb at iter 14 = -313567.40625 using 171 examples  change =   66.59375
+Ave LogProb at iter 15 = -313495.25000 using 171 examples  change =   72.15625
+Ave LogProb at iter 16 = -313426.00000 using 171 examples  change =   69.25000
+Ave LogProb at iter 17 = -313381.43750 using 171 examples  change =   44.56250
+Ave LogProb at iter 18 = -313368.90625 using 171 examples  change =   12.53125
+Ave LogProb at iter 19 = -313362.06250 using 171 examples  change =    6.84375
+Ave LogProb at iter 20 = -313358.28125 using 171 examples  change =    3.78125
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_407521.txt -M model/hmm2 -H model/hmm1/Activity407521 Activity407521 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity407521 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+171 Examples loaded, Max length = 163, Min length = 7
+Ave LogProb at iter 1 = -313356.78125 using 171 examples
+Ave LogProb at iter 2 = -313353.21875 using 171 examples  change =    3.56250
+Ave LogProb at iter 3 = -313348.12500 using 171 examples  change =    5.09375
+Ave LogProb at iter 4 = -313347.03125 using 171 examples  change =    1.09375
+Ave LogProb at iter 5 = -313347.09375 using 171 examples  change =   -0.06250
+Ave LogProb at iter 6 = -313347.00000 using 171 examples  change =    0.09375
+Ave LogProb at iter 7 = -313347.12500 using 171 examples  change =   -0.12500
+Ave LogProb at iter 8 = -313347.15625 using 171 examples  change =   -0.03125
+Ave LogProb at iter 9 = -313346.84375 using 171 examples  change =    0.31250
+Ave LogProb at iter 10 = -313347.09375 using 171 examples  change =   -0.25000
+Ave LogProb at iter 11 = -313346.96875 using 171 examples  change =    0.12500
+Ave LogProb at iter 12 = -313347.03125 using 171 examples  change =   -0.06250
+Ave LogProb at iter 13 = -313346.93750 using 171 examples  change =    0.09375
+Ave LogProb at iter 14 = -313346.93750 using 171 examples  change =    0.00000
+Estimation converged at iteration 14
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_407521.txt -M model/hmm3 -H model/hmm2/Activity407521 Activity407521 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity407521 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+171 Examples loaded, Max length = 163, Min length = 7
+Ave LogProb at iter 1 = -313347.00000 using 171 examples
+Ave LogProb at iter 2 = -313346.96875 using 171 examples  change =    0.03125
+Ave LogProb at iter 3 = -313347.09375 using 171 examples  change =   -0.12500
+Ave LogProb at iter 4 = -313347.09375 using 171 examples  change =    0.00000
+Estimation converged at iteration 4
+
+No HTK Configuration Parameters Set
+
+Initialize HMM...
+HInit -A -D -w 1.0 -T 1 -S train-data/trainlist_act_405506.txt -M model/hmm0 model/proto/Activity405506 
+
+No HTK Configuration Parameters Set
+
+Initialising  HMM model/proto/Activity405506 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ maxIter  :  20
+ epsilon  :  0.000100
+ minSeg   :  3
+ Updating :  Means Variances MixWeights/DProbs TransProbs
+
+ - system is PLAIN
+127 Observation Sequences Loaded
+Starting Estimation Process
+Iteration 1: Average LogP =-88459.00000
+Iteration 2: Average LogP =-86072.10156  Change =  2386.89844
+Iteration 3: Average LogP =-84563.89062  Change =  1508.21094
+Iteration 4: Average LogP =-84172.80469  Change =   391.08594
+Iteration 5: Average LogP =-84039.23438  Change =   133.57031
+Iteration 6: Average LogP =-83953.97656  Change =    85.25781
+Iteration 7: Average LogP =-83906.90625  Change =    47.07031
+Iteration 8: Average LogP =-83883.33594  Change =    23.57031
+Iteration 9: Average LogP =-83858.77344  Change =    24.56250
+Iteration 10: Average LogP =-83832.83594  Change =    25.93750
+Iteration 11: Average LogP =-83753.67188  Change =    79.16406
+Iteration 12: Average LogP =-83698.92969  Change =    54.74219
+Iteration 13: Average LogP =-83624.03125  Change =    74.89844
+Iteration 14: Average LogP =-83598.99219  Change =    25.03906
+Iteration 15: Average LogP =-83535.25000  Change =    63.74219
+Iteration 16: Average LogP =-83522.60938  Change =    12.64062
+Iteration 17: Average LogP =-83509.04688  Change =    13.56250
+Iteration 18: Average LogP =-83500.99219  Change =     8.05469
+Iteration 19: Average LogP =-83498.81250  Change =     2.17969
+Iteration 20: Average LogP =-83497.39844  Change =     1.41406
+Estimation aborted at iteration 21
+Output written to directory model/hmm0
+
+No HTK Configuration Parameters Set
+
+Training HMMS...
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_405506.txt -M model/hmm1 -H model/hmm0/Activity405506 Activity405506 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity405506 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+127 Examples loaded, Max length = 38, Min length = 7
+Ave LogProb at iter 1 = -83496.23438 using 127 examples
+Ave LogProb at iter 2 = -83495.85156 using 127 examples  change =    0.38281
+Ave LogProb at iter 3 = -83495.72656 using 127 examples  change =    0.12500
+Ave LogProb at iter 4 = -83495.66406 using 127 examples  change =    0.06250
+Ave LogProb at iter 5 = -83495.32812 using 127 examples  change =    0.33594
+Ave LogProb at iter 6 = -83495.35938 using 127 examples  change =   -0.03125
+Ave LogProb at iter 7 = -83495.38281 using 127 examples  change =   -0.02344
+Ave LogProb at iter 8 = -83495.37500 using 127 examples  change =    0.00781
+Ave LogProb at iter 9 = -83495.35938 using 127 examples  change =    0.01562
+Ave LogProb at iter 10 = -83495.38281 using 127 examples  change =   -0.02344
+Ave LogProb at iter 11 = -83495.35156 using 127 examples  change =    0.03125
+Ave LogProb at iter 12 = -83495.36719 using 127 examples  change =   -0.01562
+Ave LogProb at iter 13 = -83495.34375 using 127 examples  change =    0.02344
+Ave LogProb at iter 14 = -83495.35156 using 127 examples  change =   -0.00781
+Ave LogProb at iter 15 = -83495.34375 using 127 examples  change =    0.00781
+Ave LogProb at iter 16 = -83495.37500 using 127 examples  change =   -0.03125
+Ave LogProb at iter 17 = -83495.35938 using 127 examples  change =    0.01562
+Ave LogProb at iter 18 = -83495.35156 using 127 examples  change =    0.00781
+Ave LogProb at iter 19 = -83495.36719 using 127 examples  change =   -0.01562
+Ave LogProb at iter 20 = -83495.37500 using 127 examples  change =   -0.00781
+Estimation aborted at iteration 20
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_405506.txt -M model/hmm2 -H model/hmm1/Activity405506 Activity405506 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity405506 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+127 Examples loaded, Max length = 38, Min length = 7
+Ave LogProb at iter 1 = -83495.35156 using 127 examples
+Ave LogProb at iter 2 = -83495.34375 using 127 examples  change =    0.00781
+Ave LogProb at iter 3 = -83495.39062 using 127 examples  change =   -0.04688
+Ave LogProb at iter 4 = -83495.35938 using 127 examples  change =    0.03125
+Ave LogProb at iter 5 = -83495.38281 using 127 examples  change =   -0.02344
+Ave LogProb at iter 6 = -83495.38281 using 127 examples  change =    0.00000
+Estimation converged at iteration 6
+
+No HTK Configuration Parameters Set
+
+HRest -A -D -T 1 -v 0.00000000001 -S train-data/trainlist_act_405506.txt -M model/hmm3 -H model/hmm2/Activity405506 Activity405506 
+
+No HTK Configuration Parameters Set
+
+Reestimating HMM Activity405506 . . . 
+ States   :   2  3  4 (width)
+ Mixes  s1:   7  7  7 ( 847  )
+ Num Using:   0  0  0
+ Parm Kind:  MFCC
+ Number of owners = 1
+ SegLab   :  NONE
+ MaxIter  :  20
+ Epsilon  :  0.000100
+ Updating :  Transitions Means Variances 
+
+ - system is PLAIN
+127 Examples loaded, Max length = 38, Min length = 7
+Ave LogProb at iter 1 = -83495.34375 using 127 examples
+Ave LogProb at iter 2 = -83495.32031 using 127 examples  change =    0.02344
+Ave LogProb at iter 3 = -83495.39062 using 127 examples  change =   -0.07031
+Ave LogProb at iter 4 = -83495.39062 using 127 examples  change =    0.00000
+Estimation converged at iteration 4
+
+No HTK Configuration Parameters Set
+
+Compiling hmms into one file..
