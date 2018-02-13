@@ -1,7 +1,7 @@
 # Specify all config such as train data path, test data path, etc in this file.
 
 config = {
-  'dataset_dir'   : '../../data/OpportunityUCIDataset/dataset',
+  'dataset_dir'   : '/coc/pcba1/Datasets/public/OpportunityUCIDataset/dataset',
   'users'         : ['S1', 'S2', 'S3'],
   'train_data_dir': './train-data',
   'test_data_dir' : './test-data',
@@ -23,7 +23,7 @@ config = {
   'sliding_window_overlap'      : 1.0,
 
   # null class config
-  'ignore_null_class'           : 1,
+  'ignore_null_class'           : 0,
 
   # number of features
   #'num_features'  : ((10*3)+3),
