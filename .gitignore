@@ -1,2 +1,5 @@
 opportunity-gesture-src/htkdata
+opportunity-gesture-src/model/hmm*
 *.pyc
+nohup.out
+*.mlf
