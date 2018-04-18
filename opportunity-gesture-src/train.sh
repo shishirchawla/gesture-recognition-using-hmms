@@ -3,6 +3,7 @@
 train_data_dir='train-data'
 train_steps=3
 activities=(0 406516 406517 404516 404517 406520 404520 406505 404505 406519 404519 406511 404511 406508 404508 408512 407521 405506)
+#activities=(0)
 
 # Train
 # Cleanup old hmms
@@ -43,3 +44,23 @@ do
   fi
 done
 
+# Embedded training
+mkdir model/hmm4
+mkdir model/hmm5
+
+# 1st iter
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist.txt -H model/hmm$((train_steps))/all -M model/hmm$((train_steps+1)) -p 1 hmmlist.txt
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist2.txt -H model/hmm$((train_steps))/all -M model/hmm$((train_steps+1)) -p 2 hmmlist.txt
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist3.txt -H model/hmm$((train_steps))/all -M model/hmm$((train_steps+1)) -p 3 hmmlist.txt
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist4.txt -H model/hmm$((train_steps))/all -M model/hmm$((train_steps+1)) -p 4 hmmlist.txt
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist5.txt -H model/hmm$((train_steps))/all -M model/hmm$((train_steps+1)) -p 5 hmmlist.txt
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist6.txt -H model/hmm$((train_steps))/all -M model/hmm$((train_steps+1)) -p 6 hmmlist.txt
+HERest -T 1 -v 0.00000000001 -H model/hmm$((train_steps))/all  -M model/hmm$((train_steps+1)) -p 0 hmmlist.txt model/hmm$((train_steps+1))/*.acc
+# 2nd iter
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist.txt -H model/hmm$((train_steps+1))/all -M model/hmm$((train_steps+2)) -p 1 hmmlist.txt
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist2.txt -H model/hmm$((train_steps+1))/all -M model/hmm$((train_steps+2)) -p 2 hmmlist.txt
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist3.txt -H model/hmm$((train_steps+1))/all -M model/hmm$((train_steps+2)) -p 3 hmmlist.txt
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist4.txt -H model/hmm$((train_steps+1))/all -M model/hmm$((train_steps+2)) -p 4 hmmlist.txt
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist5.txt -H model/hmm$((train_steps+1))/all -M model/hmm$((train_steps+2)) -p 5 hmmlist.txt
+HERest -T 1 -v 0.00000000001  -S train-data/sessionlist6.txt -H model/hmm$((train_steps+1))/all -M model/hmm$((train_steps+2)) -p 6 hmmlist.txt
+HERest -T 1 -v 0.00000000001 -H model/hmm$((train_steps+1))/all  -M model/hmm$((train_steps+2)) -p 0 hmmlist.txt model/hmm$((train_steps+2))/*.acc

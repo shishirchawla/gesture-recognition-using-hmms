@@ -6,23 +6,13 @@ import scipy
 ########################################################
 # Mean
 def mean(df):
-  # x = df['x-axis'].mean(axis=0)
-  # y = df['y-axis'].mean(axis=0)
-  # z = df['z-axis'].mean(axis=0)
-  x = np.mean(df['x-axis'].as_matrix(), axis=0)
-  y = np.mean(df['y-axis'].as_matrix(), axis=0)
-  z = np.mean(df['z-axis'].as_matrix(), axis=0)
-  return x, y, z
+  data = df.as_matrix(columns=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77'])
+  return data.mean(0)
 
 # Standard deviation
 def stddev(df):
-  # x = df['x-axis'].std(axis=0)
-  # y = df['y-axis'].std(axis=0)
-  # z = df['z-axis'].std(axis=0)
-  x = np.std(df['x-axis'].as_matrix(), axis=0)
-  y = np.std(df['y-axis'].as_matrix(), axis=0)
-  z = np.std(df['z-axis'].as_matrix(), axis=0)
-  return x, y, z
+  data = df.as_matrix(columns=['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23','24','25','26','27','28','29','30','31','32','33','34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59','60','61','62','63','64','65','66','67','68','69','70','71','72','73','74','75','76','77'])
+  return data.std(0)
 
 # Kurtosis
 def kurtosis(df):
@@ -46,7 +36,7 @@ def skew(df):
   return x, y, z
 
 # ECDF
-def ecdf(df, components=10): #try 10 components
+def ecdf(df, components=3): #try 10 components
     #
     #   rep = ecdfRep(data, components)
     #

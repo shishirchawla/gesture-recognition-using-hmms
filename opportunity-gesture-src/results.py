@@ -72,6 +72,6 @@ if __name__ == '__main__':
     plotmatrix = sys.argv[3]
     if plotmatrix == '1':
       plt.figure()
-      plot_confusion_matrix(cm, label_map_values, normalize=False)
+      plot_confusion_matrix(cm, label_map_values, normalize=True)
       plt.show()
 

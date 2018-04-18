@@ -26,9 +26,10 @@ def main():
 def remove_dirs():
   if os.path.exists(config['output_dir']):
     shutil.rmtree(config['output_dir'])
-  for train_file in config['users']:
-    if os.path.exists(train_file+'-data'):
-      shutil.rmtree(train_file+'-data')
+  if os.path.exists(config['train_data_dir']):
+    shutil.rmtree(config['train_data_dir'])
+  if os.path.exists(config['test_data_dir']):
+    shutil.rmtree(config['test_data_dir'])
 
 def create_dirs():
   if not os.path.exists(config['output_dir']):

@@ -20,6 +20,8 @@ def process_data(train_dir, train_files):
   activity_testfile_dict = defaultdict(list)
 
   for train_file in train_files:
+    print 'processing:', train_file
+
     file_path = os.path.join(train_dir, train_file)
 
     # Read data
@@ -193,7 +195,7 @@ def windows(data, size):
 def subwindows(data, size):
     start = 0
     #while start + config['num_samples_per_sub_window'] < data.count():
-    while start + (int(size)*2) < data.count():
+    while start + (int(size)) < data.count():
         yield start, start + config['num_samples_per_sub_window']
         start += int(size)
 
@@ -226,7 +228,11 @@ def compute_features(df, num_features, window_size=int(float(config['sub_window_
     window_features = np.array([])
 
     # Add ecdf
-    window_features = np.append(window_features, ecdf(window_df))
+    window_features = np.append(window_features, ecdf(window_df, 3))
+    # Add mean
+    #window_features = np.append(window_features, mean(window_df))
+    # Add std
+    #window_features = np.append(window_features, stddev(window_df))
 
     features = np.vstack([features, window_features])
 
